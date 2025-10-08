@@ -1,0 +1,63 @@
+E:\Development\PrintUtility\Order Display System\bin\Debug\KOT Print Utility.exe.config
+E:\Development\PrintUtility\Order Display System\bin\Debug\KOT Print Utility.exe
+E:\Development\PrintUtility\Order Display System\bin\Debug\KOT Print Utility.pdb
+E:\Development\PrintUtility\Order Display System\obj\Debug\KOTPrintUtility.UI.Data_Center.resources
+E:\Development\PrintUtility\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+E:\Development\PrintUtility\Order Display System\obj\Debug\KOTPrintUtility.UI.ItemDetail.resources
+E:\Development\PrintUtility\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+E:\Development\PrintUtility\Order Display System\obj\Debug\KOTPrintUtility.Form1.resources
+E:\Development\PrintUtility\Order Display System\obj\Debug\KOTPrintUtility.Properties.Resources.resources
+E:\Development\PrintUtility\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+E:\Development\PrintUtility\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.TSC_Print.resources
+E:\Development\PrintUtility\Order Display System\obj\Debug\KOT Print Utility.csproj.GenerateResource.cache
+E:\Development\PrintUtility\Order Display System\obj\Debug\KOT Print Utility.csproj.CoreCompileInputs.cache
+E:\Development\PrintUtility\Order Display System\obj\Debug\KOT Print Utility.csproj.CopyComplete
+E:\Development\PrintUtility\Order Display System\obj\Debug\KOT Print Utility.exe
+E:\Development\PrintUtility\Order Display System\obj\Debug\KOT Print Utility.pdb
+E:\Development\PrintUtility\Order Display System\obj\Debug\KOT Print Utility.csprojAssemblyReference.cache
+E:\Development\PrintUtility\PrintUtility VS 1.0.2\Order Display System\bin\Debug\KOT Print Utility.exe.config
+E:\Development\PrintUtility\PrintUtility VS 1.0.2\Order Display System\bin\Debug\KOT Print Utility.exe
+E:\Development\PrintUtility\PrintUtility VS 1.0.2\Order Display System\bin\Debug\KOT Print Utility.pdb
+E:\Development\PrintUtility\PrintUtility VS 1.0.2\Order Display System\obj\Debug\KOTPrintUtility.UI.Data_Center.resources
+E:\Development\PrintUtility\PrintUtility VS 1.0.2\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+E:\Development\PrintUtility\PrintUtility VS 1.0.2\Order Display System\obj\Debug\KOTPrintUtility.UI.ItemDetail.resources
+E:\Development\PrintUtility\PrintUtility VS 1.0.2\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+E:\Development\PrintUtility\PrintUtility VS 1.0.2\Order Display System\obj\Debug\KOTPrintUtility.Form1.resources
+E:\Development\PrintUtility\PrintUtility VS 1.0.2\Order Display System\obj\Debug\KOTPrintUtility.Properties.Resources.resources
+E:\Development\PrintUtility\PrintUtility VS 1.0.2\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+E:\Development\PrintUtility\PrintUtility VS 1.0.2\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.TSC_Print.resources
+E:\Development\PrintUtility\PrintUtility VS 1.0.2\Order Display System\obj\Debug\KOT Print Utility.csproj.GenerateResource.cache
+E:\Development\PrintUtility\PrintUtility VS 1.0.2\Order Display System\obj\Debug\KOT Print Utility.csproj.CoreCompileInputs.cache
+E:\Development\PrintUtility\PrintUtility VS 1.0.2\Order Display System\obj\Debug\KOT Print Utility.csproj.CopyComplete
+E:\Development\PrintUtility\PrintUtility VS 1.0.2\Order Display System\obj\Debug\KOT Print Utility.exe
+E:\Development\PrintUtility\PrintUtility VS 1.0.2\Order Display System\obj\Debug\KOT Print Utility.pdb
+E:\Development\PrintUtility\PrintUtility VS 1.0.2\Order Display System\obj\Debug\KOT Print Utility.csprojAssemblyReference.cache
+E:\Development\PrintUtility\PrintUtility VS 1.0.4\Order Display System\bin\Debug\KOT Print Utility.exe.config
+E:\Development\PrintUtility\PrintUtility VS 1.0.4\Order Display System\bin\Debug\KOT Print Utility.exe
+E:\Development\PrintUtility\PrintUtility VS 1.0.4\Order Display System\bin\Debug\KOT Print Utility.pdb
+E:\Development\PrintUtility\PrintUtility VS 1.0.4\Order Display System\obj\Debug\KOTPrintUtility.UI.Form1.resources
+E:\Development\PrintUtility\PrintUtility VS 1.0.4\Order Display System\obj\Debug\KOTPrintUtility.UI.Data_Center.resources
+E:\Development\PrintUtility\PrintUtility VS 1.0.4\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+E:\Development\PrintUtility\PrintUtility VS 1.0.4\Order Display System\obj\Debug\KOTPrintUtility.UI.ItemDetail.resources
+E:\Development\PrintUtility\PrintUtility VS 1.0.4\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+E:\Development\PrintUtility\PrintUtility VS 1.0.4\Order Display System\obj\Debug\KOTPrintUtility.Properties.Resources.resources
+E:\Development\PrintUtility\PrintUtility VS 1.0.4\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+E:\Development\PrintUtility\PrintUtility VS 1.0.4\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.TSC_Print.resources
+E:\Development\PrintUtility\PrintUtility VS 1.0.4\Order Display System\obj\Debug\KOT Print Utility.csproj.GenerateResource.cache
+E:\Development\PrintUtility\PrintUtility VS 1.0.4\Order Display System\obj\Debug\KOT Print Utility.csproj.CoreCompileInputs.cache
+E:\Development\PrintUtility\PrintUtility VS 1.0.4\Order Display System\obj\Debug\KOT Print Utility.csproj.CopyComplete
+E:\Development\PrintUtility\PrintUtility VS 1.0.4\Order Display System\obj\Debug\KOT Print Utility.exe
+E:\Development\PrintUtility\PrintUtility VS 1.0.4\Order Display System\obj\Debug\KOT Print Utility.pdb
+E:\Development\PrintUtility\PrintUtility VS 1.0.4\Order Display System\obj\Debug\KOT Print Utility.csprojAssemblyReference.cache
+E:\Development\PrintUtility\OnlineAutoPrintUtility VS 1.0.1\Order Display System\obj\Debug\KOTPrintUtility.UI.Form1.resources
+E:\Development\PrintUtility\OnlineAutoPrintUtility VS 1.0.1\Order Display System\obj\Debug\KOTPrintUtility.UI.Data_Center.resources
+E:\Development\PrintUtility\OnlineAutoPrintUtility VS 1.0.1\Order Display System\obj\Debug\KOTPrintUtility.Properties.Resources.resources
+E:\Development\PrintUtility\OnlineAutoPrintUtility VS 1.0.1\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.TSC_Print.resources
+E:\Development\PrintUtility\OnlineAutoPrintUtility VS 1.0.1\Order Display System\obj\Debug\KOT Print Utility.csproj.GenerateResource.cache
+E:\Development\PrintUtility\OnlineAutoPrintUtility VS 1.0.1\Order Display System\obj\Debug\KOT Print Utility.csproj.CoreCompileInputs.cache
+E:\Development\PrintUtility\OnlineAutoPrintUtility VS 1.0.1\Order Display System\obj\Debug\KOT Print Utility.exe
+E:\Development\PrintUtility\OnlineAutoPrintUtility VS 1.0.1\Order Display System\obj\Debug\KOT Print Utility.pdb
+E:\Development\PrintUtility\OnlineAutoPrintUtility VS 1.0.1\Order Display System\bin\Debug\KOT Print Utility.exe.config
+E:\Development\PrintUtility\OnlineAutoPrintUtility VS 1.0.1\Order Display System\bin\Debug\KOT Print Utility.exe
+E:\Development\PrintUtility\OnlineAutoPrintUtility VS 1.0.1\Order Display System\bin\Debug\KOT Print Utility.pdb
+E:\Development\PrintUtility\OnlineAutoPrintUtility VS 1.0.1\Order Display System\obj\Debug\KOT Print Utility.csproj.CopyComplete

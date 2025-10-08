@@ -1,0 +1,601 @@
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Net.NetworkInformation;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using TuchScreenApp1Jan2013.App_Code;
+
+namespace KOTPrintUtility.App_Code
+{
+	public class QSRApp
+	{
+		
+		clsPrintKOT objKOT = null;
+		ADOC objADOC = null;
+		static DataTable dt_tblTemp_id = null;
+		IOnineOrderAutoAccept objcls = null;
+		ClsPrintBill objClsPrintBill = null;
+		OrderStatusUpdateLog objodrStatus = null;
+		public QSRApp()
+		{			
+			dt_tblTemp_id = new DataTable();
+			objcls = new OrderDetailOnline();
+			objClsPrintBill = new ClsPrintBill();
+			objADOC = new ADOC();
+			objKOT = new clsPrintKOT();
+			objodrStatus = new OrderStatusUpdateLog();
+		}
+
+		
+		#region GetItem_ByIndex
+		/// <summary>
+		/// GetItem_ByIndex
+		/// </summary>
+		/// <param name="I_code_fk"></param>
+		/// <param name="dt"></param>
+		/// <param name="item_index"></param>
+		/// <returns></returns>
+		private DataTable GetItem_ByIndex(string I_code_fk, DataTable dt, string item_index)
+		{
+			DataTable dtTempData = new DataTable();
+			try
+			{
+				var Query = from TempAssortedItem in dt.AsEnumerable()
+							where TempAssortedItem.Field<Int64>("i_code_fk") == Convert.ToInt64(I_code_fk) && TempAssortedItem.Field<String>("item_index") == item_index
+							select TempAssortedItem;
+				if (Query.Count() > 0)
+				{
+					dtTempData = Query.CopyToDataTable();
+				}
+			}
+			catch { }
+			return dtTempData;
+		}
+		#endregion
+
+
+		#region GetdealNAssorted_item
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
+		public DataTable GetdealNAssorted_item()
+		{
+			int count = 0;
+			DataTable dtdeal = new DataTable();
+			DataTable dtAssorted_Item_Detail = AssortedItem.objds.Tables["tbl_AssortedItem"];
+			string[] columnNames = (from dc in dtAssorted_Item_Detail.Columns.Cast<DataColumn>()
+									select dc.ColumnName).ToArray();
+			for (int RoIndex = 0; RoIndex < columnNames.Length; RoIndex++)
+			{
+				count = 0;
+				string ColName = columnNames[RoIndex].ToString();
+				if (ColName == "order_type")
+				{
+					count++;
+					break;
+				}
+			}
+			if (count == 0)
+			{
+				dtAssorted_Item_Detail.Columns.Add("order_type");
+				dtAssorted_Item_Detail.Columns.Add("IsDiscount");
+				dtAssorted_Item_Detail.Columns.Add("Index_No");
+				if (dtAssorted_Item_Detail.Columns.Contains("DishComment"))
+					count = 0;
+				else
+					dtAssorted_Item_Detail.Columns.Add("DishComment");
+				if (dtAssorted_Item_Detail.Columns.Contains("Amount"))
+					count = 0;
+				else
+					dtAssorted_Item_Detail.Columns.Add("Amount");
+			}
+			dtdeal = clsDeal.objds.Tables["tbl_deals"];
+			for (int i = 0; i < dtdeal.Rows.Count; i++)
+			{
+				string i_code_fk = dtdeal.Rows[i]["i_code_fk"].ToString();
+				string i_code = dtdeal.Rows[i]["i_code"].ToString();
+				string qty = dtdeal.Rows[i]["qty"].ToString();
+				string itemindex = dtdeal.Rows[i]["itemindex"].ToString();
+				string i_name = dtdeal.Rows[i]["i_name"].ToString();
+				string IsDiscount = dtdeal.Rows[i]["IsDiscount"].ToString();
+				string Amount = dtdeal.Rows[i]["Amount"].ToString();
+				string Order_type = "D";
+				dtAssorted_Item_Detail.Rows.Add(i_code_fk, i_code, qty, itemindex, i_name, Order_type, IsDiscount, "0", Amount);
+			}
+			DataTable dtItems = clsItems.objItems.Tables["tbl_Items"];
+			for (int a = 0; a < dtItems.Rows.Count; a++)
+			{
+				string i_code_fk = dtItems.Rows[a]["I_code_fk"].ToString();
+				string i_code = dtItems.Rows[a]["i_code"].ToString();
+				string qty = dtItems.Rows[a]["qty"].ToString();
+				string itemindex = dtItems.Rows[a]["Index"].ToString();
+				string i_name = dtItems.Rows[a]["Item Name"].ToString();
+				string IsDiscount = dtItems.Rows[a]["IsDiscount"].ToString();
+				string i_Type = dtItems.Rows[a]["i_Type"].ToString();
+				string Index_No = dtItems.Rows[a]["Index_No"].ToString();
+				string DishComment = dtItems.Rows[a]["DishComment"].ToString();
+				string Amount = dtItems.Rows[a]["Amount"].ToString();
+
+				string Order_type = "I";
+				dtAssorted_Item_Detail.Rows.Add(i_code_fk, i_code, qty, itemindex, i_name, Order_type, IsDiscount, Index_No, DishComment, Amount);
+			}
+			return dtAssorted_Item_Detail;
+		}
+		#endregion
+
+
+		#region dtAssortedItem
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="dtAssortedItem"></param>
+		/// <param name="deal"></param>
+		/// <returns></returns>
+		private double AddAssortedItem(DataTable dtAssortedItem, string deal, string Deal_ItemIndex, string Deal_Item)
+		{
+			double TotalAmount = 0;
+			try
+			{
+				for (int a = 0; a < dtAssortedItem.Rows.Count; a++)
+				{
+					string Assorted_Item = dtAssortedItem.Rows[a]["i_code_fk"].ToString();
+					string i_code = dtAssortedItem.Rows[a]["i_code"].ToString();
+					string qty = dtAssortedItem.Rows[a]["qty"].ToString();
+					string i_name = dtAssortedItem.Rows[a]["i_name"].ToString();
+					string IsDiscount = dtAssortedItem.Rows[a]["IsDiscount"].ToString();
+					double amount = Convert.ToDouble(dtAssortedItem.Rows[a]["Amount"].ToString());
+					Program.Assorted_ItemIndex = dtAssortedItem.Rows[a]["item_index"].ToString();
+					string TaxRate = dtAssortedItem.Rows[a]["TaxRate"].ToString();
+					//double rate=
+					TotalAmount += amount;
+					string Step_Name = dtAssortedItem.Rows[a]["Step_Name"].ToString();
+					string No_of_Item = dtAssortedItem.Rows[a]["No_of_Item"].ToString();
+					string Deal_TYpe = dtAssortedItem.Rows[a]["i_type"].ToString();
+					string i_type = dtAssortedItem.Rows[a]["Deal_TYpe"].ToString();
+					string Index_No = dtAssortedItem.Rows[a]["Index_No"].ToString();
+					string DishComment = dtAssortedItem.Rows[a]["DishComment"].ToString();
+					if (deal == "deal")
+						clsDeal.objds.Tables["tbl_deals"].Rows.Add(Assorted_Item, i_code, qty, Deal_ItemIndex, i_name, IsDiscount, amount.ToString("N2"));
+					else
+						//AssortedItem.objds.Tables["tbl_AssortedItem"].Rows.Add(Program.Assorted_Item, i_code, qty, Program.Assorted_ItemIndex, i_code);
+						clsItems.GetMathod.AddItemsinList(i_name, qty.ToString(), i_code, IsDiscount, amount.ToString(), Step_Name, No_of_Item, i_type, Deal_TYpe, Deal_ItemIndex, Deal_Item, TaxRate, Index_No, DishComment);
+				}
+			}
+			catch { }
+			return TotalAmount;
+		}
+		#endregion
+
+
+		#region GetBillDetail
+		/// <summary>
+		/// GetBillDetail
+		/// </summary>
+		/// <param name="Bill_No"></param>
+		/// <param name="dgvItemDetails"></param>
+		private async Task GetBillDetailAsync(string Bill_No, string CustName, string custMobileNo, string ZomatoOrderNo, string Cust_code)
+		{
+			tbl_bill objBill = null;
+			string Bill_TypeName_Test = string.Empty;
+			try
+			{
+				dt_tblTemp_id = new DataTable();
+				DataSet dsBillDetail = objcls.GetOrderDetail(Bill_No, Program.Outlet_id, Program.DayEnd_BIllingDate);
+				if (dsBillDetail.Tables[0].Rows.Count > 0)
+				{
+					Loging.Log(LogType.Information, "QSRApp.GetBillDetailAsync no of item=>  " + dsBillDetail.Tables[1].Rows.Count.ToString() + " ZomatoOrderNo " + ZomatoOrderNo);
+					string payment_mode = dsBillDetail.Tables[0].Rows[0]["payment_mode"].ToString();
+					objBill = new tbl_bill();
+					objBill.bill_no_WebOrder = Bill_No;
+					objBill.custCode = Cust_code;
+					Bill_TypeName_Test = dsBillDetail.Tables[0].Rows[0]["Type"].ToString();
+					objBill.Bill_TypeName = dsBillDetail.Tables[0].Rows[0]["Bill_Type"].ToString();
+					Program.BillType = objBill.Bill_TypeName;
+					objBill.ModifiedBill_No = dsBillDetail.Tables[0].Rows[0]["Bill_no"].ToString();
+					objBill.ModifiedAmount = dsBillDetail.Tables[0].Rows[0]["bill_amount"].ToString();
+					objBill.DiscountModifiedBy = dsBillDetail.Tables[0].Rows[0]["Discount_by"].ToString();
+					objBill.Modified_DiscountAmnt = dsBillDetail.Tables[0].Rows[0]["dis_amount"].ToString();
+					objBill.Modified_DiscountPct = dsBillDetail.Tables[0].Rows[0]["Bill_DiscountPct"].ToString();
+					objBill.Remarks = dsBillDetail.Tables[0].Rows[0]["Comments"].ToString().Trim();
+					objBill.Delivery_Charge = dsBillDetail.Tables[0].Rows[0]["Delivery_Charge"].ToString();
+
+					objBill.Channel = Convert.ToString(dsBillDetail.Tables[0].Rows[0]["bill_punch_by"]);
+					objBill.Channel_Id = Convert.ToString(dsBillDetail.Tables[0].Rows[0]["External_Source_id"]);
+					objBill.Delivery_By = Convert.ToString(dsBillDetail.Tables[0].Rows[0]["DeliveryBy"]);
+					objBill.Aggr_dis_pct = Convert.ToString(dsBillDetail.Tables[0].Rows[0]["dis_pct_Agg"]);
+					objBill.Aggr_dis_amount = Convert.ToString(dsBillDetail.Tables[0].Rows[0]["Aggr_Discount"]);
+					objBill.Agg_Tax_Calculation = Convert.ToString(dsBillDetail.Tables[0].Rows[0]["Agg_Tax_Calculation"]);
+					objBill.dis_Type = dsBillDetail.Tables[0].Rows[0]["dis_type"].ToString();
+					objBill.ZomatoOrderNo = ZomatoOrderNo;
+					objBill.CardType = dsBillDetail.Tables[0].Rows[0]["Online_Payment_Mode"].ToString();
+
+					if (dsBillDetail.Tables[0].Columns.Contains("is_instant_order"))
+					{
+						objBill.is_instant_order = Convert.ToString(dsBillDetail.Tables[0].Rows[0]["is_instant_order"]);
+					}
+					else
+					{
+						objBill.is_instant_order = "0";
+					}
+
+					if (dsBillDetail.Tables[0].Columns.Contains("Card_Type_Settlement"))
+					{
+						objBill.Card_Type_Settlement = Convert.ToString(dsBillDetail.Tables[0].Rows[0]["Card_Type_Settlement"]);
+					}
+					else
+					{
+						objBill.Card_Type_Settlement = "0";
+					}
+
+					string BType = objBill.Bill_TypeName;
+					if (BType.Trim() == "")
+					{
+						BType = objcls.GetBillType(Bill_No);
+					}
+					//Program.OnlineOrderNo = Bill_No;
+					DataTable dtTran = dsBillDetail.Tables[1];
+					//AssortedItem.CancelAssortedItem();
+					//clsDeal.GetMathod.CancelDealItem();
+					//clsItems.GetMathod.CancelItem();
+					//OrderDetailOnline.GenerateUniqIndex("", 1, dt_tblTemp_id);
+					DataTable dtAssortedItem = dsBillDetail.Tables[2];
+					DataTable dtCharges = dsBillDetail.Tables[3];
+					if (dtCharges != null)
+					{
+						foreach (DataRow dr in dtCharges.Rows)
+						{
+							DataRow drNew = PackingCharges.GetPackaingCharges.NewRow();
+							drNew["Zomato_order_id"] = dr["Zomato_order_id"];
+							drNew["Charge_name"] = dr["Charge_name"];
+							drNew["chargesValue"] = dr["chargesValue"];
+							drNew["chargesTotaltax"] = dr["chargesTotaltax"];
+							drNew["I_Code_fk"] = dr["I_Code_fk"];
+							drNew["chargesId"] = dr["chargesId"];
+							PackingCharges.AddCharges(drNew);
+						}
+					}
+
+					if (dtTran.Rows.Count > 0)
+					{
+						//Program.Discount_Pct = "0";
+						List<tbl_tran> objlst = new List<tbl_tran>();
+						for (int i = 0; i < dtTran.Rows.Count; i++)
+						{
+							tbl_tran trn = new tbl_tran();
+							trn.Assorted_Item = dtTran.Rows[i]["I_code"].ToString();
+							trn.qty = dtTran.Rows[i]["qty"].ToString();
+							trn.Rate = dtTran.Rows[i]["Rate"].ToString();
+							trn.I_Name = dtTran.Rows[i]["I_Name"].ToString();
+							trn.TaxRate = dtTran.Rows[i]["TaxRate"].ToString();
+							trn.IsTaxable = dtTran.Rows[i]["IsTaxable"].ToString();
+							trn.tax = Convert.ToString(dtTran.Rows[i]["Tax"].ToString());
+							trn.Discount = dtTran.Rows[i]["Discount"].ToString();
+							trn.dept = dtTran.Rows[i]["dept"].ToString();
+							trn.Group_Dish = dtTran.Rows[i]["Group_Dish"].ToString();
+							trn.service_tax = dtTran.Rows[i]["service_tax"].ToString();
+							trn.dis_rate = dtTran.Rows[i]["dis_rate"].ToString();
+							trn.dis_amount = dtTran.Rows[i]["dis_amount"].ToString();
+							//clsDeal.GetVariable.Deal_Item = trn.Assorted_Item;
+							//clsDeal.GetVariable.Deal_ItemIndex = trn.Group_Dish;
+
+							trn.amount = Convert.ToDouble(dtTran.Rows[i]["amout"].ToString());
+							//dgvItemDetails.Rows.Add(trn.I_Name.Trim(), trn.Rate, trn.qty, Amount.ToString("N2"), tax, dtTran.Rows[i]["I_code"].ToString(), dtTran.Rows[i]["Comments"].ToString(), "0", "0", TaxRate, IsTaxable, Discount, Group_Dish, dept, "0", service_tax, "0", dis_rate, dis_amount, "0", "0", "0", "0", "");
+							//double TotalRate = 0;
+							//if (dtAssortedItem.Rows.Count > 0)
+							//{
+							try
+							{
+								if (trn.dis_amount != "" && trn.dis_amount != "0")
+								{
+									if (Convert.ToDouble(trn.dis_amount) > Convert.ToDouble(trn.amount))
+									{
+										trn.dis_amount = trn.amount.ToString();
+										trn.dis_rate = (Convert.ToDouble(trn.dis_amount) / trn.amount * 100).ToString("N4");
+									}
+								}
+							}
+							catch { }
+
+							objlst.Add(trn);
+						}
+						objBill.tran = objlst;
+						//DataTable dtdeal = GetdealNAssorted_item();
+						string SubTotal = string.Empty;
+						string NetTotal = string.Empty;
+						string TotalVAT = string.Empty;
+						string ServiceTax = string.Empty;
+						string Surcharge = string.Empty;
+						string DeliveryCharge = string.Empty;
+						string BillTotal = string.Empty;
+						string GrandTotal = string.Empty;
+						string Discount_Amount = "0";
+						string sbc = "0";
+						string kkc = "0";
+						clsCalculateBill.CalculateBillDetailQSR(objlst, out SubTotal, out NetTotal, out ServiceTax, out TotalVAT, out BillTotal, out GrandTotal,
+							out Surcharge, out DeliveryCharge, Convert.ToDecimal(objBill.Modified_DiscountPct), "1", out Discount_Amount, out sbc, out kkc, objBill.Bill_TypeName, objBill.Delivery_Charge);
+
+						if (Discount_Amount != "" && Discount_Amount != "0")
+						{
+							if (Convert.ToDouble(Discount_Amount) > Convert.ToDouble(GrandTotal))
+							{
+								objBill.Modified_DiscountAmnt = SubTotal;
+							}
+						}
+						double tamt = double.Parse(NetTotal.Replace(",", "").Trim()) + double.Parse(TotalVAT.Replace(",", "").Trim()) + Convert.ToDouble(DeliveryCharge.Replace(",", "").Trim());
+
+						double TotalAmount = Math.Round(tamt);
+						double ReplaceAmount = TotalAmount - tamt;          //Round off amount
+						string srBillNo = string.Empty;
+						string is_instant_order = "0";
+						if (objBill.is_instant_order.Length > 0)
+						{
+							is_instant_order = objBill.is_instant_order;
+						}
+						if (objBill.Channel.ToLower() == "website")
+						{
+							DataGridView ObjDgvPayment = new DataGridView();
+							clsTempData.SetDataGrid(ObjDgvPayment);
+						}
+						if (BType.ToUpper() != "C" && objBill.Channel.ToLower() != "website")
+						{
+							if (objBill.Card_Type_Settlement.Length > 1)
+							{
+								bool IsAdded = AddPayment_Mode(payment_mode, payment_mode, objBill.Card_Type_Settlement, "", GrandTotal.Replace(",", "").Trim());
+							}
+						}
+						try
+						{
+							Loging.Log(LogType.Information, "QSRApp.GenerateBill_HD.start bill generation json " + JsonConvert.SerializeObject(objBill));
+						}
+						catch { }
+						//clsGenerateBillQSR objBillGenerate = new clsGenerateBillQSR();
+						bool Result = objcls.GenerateBill_HD("U", BType, Program.DayEnd_BIllingDate, GrandTotal, Discount_Amount, "0", "0", "0", payment_mode, "", objBill.tran.Count.ToString(), "", objBill.Remarks, "admin", TotalVAT, ReplaceAmount.ToString("N2"),
+							  objBill.Channel, "0", "0", "0", "0", "", "", "0", Program.Outlet_id, NetTotal, objBill.Modified_DiscountPct, "0", "0", DeliveryCharge, objBill, out srBillNo, dtAssortedItem, "0", "0", "0", "0", "0", objBill.Remarks, "0", "0", objBill.is_instant_order);
+						Loging.Log(LogType.Information, "QSRApp.GenerateBill_HD.end Result " + Result.ToString());
+						if (Result == true)
+						{
+							if (objBill.Channel.ToLower() == "website")
+							{
+								clsUpdateOrder.UpdateBillStatusWithWebsiteWebAPI(ZomatoOrderNo.Replace("-", "").Trim().TrimEnd('-'), srBillNo, objBill.bill_no_WebOrder, EnumOrderStatus.Confirm);
+							}
+							string TockenNo = string.Empty;
+							string OrderComment = string.Empty;
+							string Print_No_of_HD_Bill = clsConfigSettings.Print_No_of_HD_Bill.ToString();
+							//if (objBill.Bill_TypeName != "C")
+							string PrintCap = clsConfigSettings.Print_Cap.ToString();
+
+
+							//if (is_instant_order == "1")
+							//{
+
+							//	objClsPrintBill.PrintBillHomeDelivery(srBillNo, Program.Cust_code, Convert.ToInt32(Print_No_of_HD_Bill), clsConfigSettings.fin_year, out TockenNo, BType);
+							//}
+							//else
+							//{
+							Loging.Log(LogType.Information, "QSRApp.PrintBillHomeDelivery_CrystalAsync.start bill printing bill no=> " + srBillNo);
+							if (PrintCap == "0")
+							{
+								ClsPrintBill.PrintBill_HD_TexFormat_new(srBillNo, "", "", "", out TockenNo, out OrderComment, clsConfigSettings.fin_year, Bill_TypeName_Test);
+							}
+							//Added by Yachna for New BillPrint
+							else if (PrintCap == "2")
+							{
+								objClsPrintBill.PrintBillHomeDelivery_AssortedQty(srBillNo, Program.Cust_code, Convert.ToInt32(Print_No_of_HD_Bill), clsConfigSettings.fin_year, token => { TockenNo = token; }, BType, is_instant_order);
+							}
+							else
+							{
+								objClsPrintBill.PrintBillHomeDelivery_CrystalAsync(srBillNo, Program.Cust_code, Convert.ToInt32(Print_No_of_HD_Bill), clsConfigSettings.fin_year, token => { TockenNo = token; }, BType, is_instant_order);
+							}
+							//}
+							Loging.Log(LogType.Information, "QSRApp.PrintBillHomeDelivery_CrystalAsync.end bill printing  bill no=> " + srBillNo);
+							//else
+							//	ClsPrintBill.PrintBill_TDT_TexFormat_New(srBillNo, "", "", "", out TockenNo, out OrderComment, clsConfigSettings.fin_year, Bill_TypeName_Test);
+
+							int NoofPrint_Kot = Convert.ToInt32(clsConfigSettings.NoofPrint_KOT_TA);
+							if (objBill.Bill_TypeName == "H")
+								NoofPrint_Kot = Convert.ToInt32(clsConfigSettings.NoofPrint_KOT_HD);
+							else if (objBill.Bill_TypeName == "D")
+								NoofPrint_Kot = Convert.ToInt32(clsConfigSettings.NoofPrint_KOT_DN);
+
+							string SingleKOT = clsConfigSettings.SingleKOT;
+
+							if (clsConfigSettings.PrintRemarksOnKot != "1")
+								OrderComment = "";
+
+							Loging.Log(LogType.Information, "QSRApp start kot print no of kot " + NoofPrint_Kot + "  bill no=> " + srBillNo);
+
+							if (SingleKOT != "1")
+							{
+								if (NoofPrint_Kot > 0)
+								{
+									if (clsConfigSettings.isKOT_3or4_EnchPrint == "1")
+										objKOT.PrintKOTBigFontBigSize(NoofPrint_Kot, custMobileNo.Trim(), CustName.Trim(), srBillNo, objlst, TockenNo, OrderComment);
+									if (clsConfigSettings.isKOT_3or4_EnchPrint == "2")
+										objKOT.PrintKOTSmallFontSmallSize("1", TockenNo, NoofPrint_Kot, custMobileNo, CustName, srBillNo, OrderComment, is_instant_order);
+									else
+										objKOT.PrintKOTSmallFontSmallSize("1", TockenNo, NoofPrint_Kot, custMobileNo, CustName, srBillNo, OrderComment, is_instant_order);
+									Loging.Log(LogType.Information, "QSRApp end kot print  bill no=> " + srBillNo);
+								}
+							}
+							else
+							{
+								//Added by Yachna for Single Item Single qty Single KOT 
+								objKOT.PrintKOTSmallFontSmallSize_SeperateKot_WithoutHeaders("1", TockenNo, NoofPrint_Kot, custMobileNo, CustName, srBillNo, OrderComment);
+							}
+							Loging.Log(LogType.Information, "============================================================================================================");
+
+						}
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				Loging.Log(LogType.Error, "GetBillDetailAsync  error " + ex.Message + " online bill_no " + Bill_No);
+			}
+			finally
+			{
+				objBill = new tbl_bill();
+				dt_tblTemp_id = new DataTable();
+				dt_tblTemp_id.Rows.Clear();
+				AssortedItem.CancelAssortedItem();
+				clsDeal.GetMathod.CancelDealItem();
+				clsItems.GetMathod.CancelItem();
+			}
+		}
+
+		#endregion
+
+
+		#region AddPayment_Mode
+		private bool AddPayment_Mode(string Payment_Mode_id, string Payment_mode, string CardType, string ModeValue, string Bill_Amount)
+		{
+			int Count = 0;
+			bool IsAdded = false;
+			try
+			{
+				string hold_id = "0";
+				DataGridView objDGV = new DataGridView();
+				objDGV.AllowUserToAddRows = false;
+
+				if (Convert.ToDouble(Bill_Amount) > 0)
+				{
+					clsTempData.InsertInGrid(objDGV, Payment_Mode_id, Payment_mode, CardType, Bill_Amount, ModeValue, hold_id);
+					Count++;
+				}
+				clsTempData.SetDataGrid(objDGV);
+				IsAdded = true;
+			}
+			catch (Exception ex)
+			{
+				IsAdded = false;
+			}
+			return IsAdded;
+		}
+		#endregion
+
+
+		#region 
+		/// <summary>
+		/// GetOrder GetOnlineOrder
+		/// </summary>
+		public void GetOrder(Label lblNoofOrder)
+		{
+			try
+			{
+				int count = 0;
+				DataTable dtOrder = objcls.GetOnlineOrder();
+				if (dtOrder != null)
+				{
+					SetLableText("No of order in queue=> " + dtOrder.Rows.Count.ToString(), lblNoofOrder);
+					Loging.Log(LogType.Information, "QSRApp.GetOrder: no of order=>  " + dtOrder.Rows.Count.ToString());
+					foreach (DataRow dr in dtOrder.Rows)
+					{
+						#region customer info
+						count++;
+						string bill_no = dr["Bill_no"].ToString();
+						string bill_no_TabOrder = bill_no;
+						string Cust_MobileNo = dr["Mobile_no"].ToString().Replace("+", "").Trim();
+						string Cust_Name = dr["Cust_Name"].ToString();
+						string Address = dr["Address"].ToString();
+						string City = dr["City"].ToString();
+						string email_id = dr["email_id"].ToString().Replace("'", "");
+						string Location_Id = dr["Location_Id"].ToString();
+						string UserName = dr["UserName"].ToString();
+						string currentStatus = dr["currentStatus"].ToString();
+						string Comments = dr["Comments"].ToString().Replace("\r", " ").Trim();
+						Program.Source_of_order = dr["Order_Source_Id"].ToString();
+						string Payment_Mode = dr["Payment_Mode"].ToString();
+						string OrderSouce = dr["OrderSouce"].ToString();
+						string Land_mark = dr["Land_mark"].ToString();
+						string Location = dr["Location"].ToString();
+						string Flat_No = dr["Flat_No"].ToString();
+						string pin_no = dr["pin_no"].ToString();
+						string Longitude = dr["Longitude"].ToString();
+						string Company_Stateid = Program.Company_Stateid;
+						string Latitude = dr["Latitude"].ToString();
+						string OnlinePaymentMode = (Payment_Mode.Trim().Equals("1") ? "CASH" : "CARD");
+						Program.ZomatoOrderNo = dr["Zomato_order_id"].ToString();
+						string ZomatoOrderNo = dr["Zomato_order_id"].ToString();
+						string External_Source_id = dr["External_Source_id"].ToString();
+						string Channel_Id = dr["External_Source_id"].ToString();
+
+						string sqlqLocal = "usp_insert_Update_customer @Name='" + Cust_Name.Replace("'", " ") + "',@DOB='',@Address='" + Address.Replace("'", " ") +
+								  "',@Mobile_No='" + Cust_MobileNo + "',@Phone_No='" + Cust_MobileNo + "',@City='" + City.Replace("'", "") + "',@created_by='" + "Utility" +
+								  "',@Email_id='" + email_id + "',@Location='" + Location.Replace("'", " ") + "',@Isflag='0',@Remarks='',@location_id='" + Location_Id + "',@Colony_id='" + "1" + "'";
+
+						string cudt_codes = objADOC.GetObject.GetSingleResult(sqlqLocal);
+						Program.Cust_code = cudt_codes;
+
+						if (Program.Cust_code != "" && Program.Cust_code != "0")
+						{
+							GetBillDetailAsync(bill_no, Cust_Name, Cust_MobileNo, ZomatoOrderNo, cudt_codes);
+						}
+						SetLableText("No of order in queue=> " + dtOrder.Rows.Count.ToString() + " printed=> " + count.ToString(), lblNoofOrder);
+						#endregion
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				Loging.Log(LogType.Error, "GetOrder error " + ex.Message);
+			}
+			finally
+			{
+				//objcls.GetOrderStatusLog();
+			}
+		}
+		#endregion
+
+		public void SetLableText(string text, Label lblOrder)
+		{
+			try
+			{
+				if (lblOrder.InvokeRequired)
+				{
+					// Call this same 
+					Action safeWrite = delegate { SetLableText($"{text}", lblOrder); };
+					lblOrder.Invoke(safeWrite);
+				}
+				else
+					lblOrder.Text = text;
+
+			}
+			catch (Exception ex)
+			{
+				Loging.Log(LogType.Error, "WriteTextSafe error " + ex.Message);
+			}
+		}
+
+		public bool CheckForInternet()
+		{
+			string Validate_IP = clsConfigSettings.validate_ip.ToString();
+			bool IsRunning = false;
+			Ping p = new Ping();
+			try
+			{
+				if (Validate_IP.Length > 0)
+				{
+					PingReply reply = p.Send(Validate_IP, 3000);
+					if (reply.Status == IPStatus.Success)
+						IsRunning = true;
+				}
+				else
+				{
+					IsRunning = true;
+				}
+			}
+			catch
+			{
+				IsRunning = false;
+			}
+			return IsRunning;
+		}
+	}
+}

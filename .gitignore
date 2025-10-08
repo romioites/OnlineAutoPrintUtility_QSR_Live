@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Order Display System/bin/Debug
+/.vs/Order Print Utilitys/v15/Server/sqlite3
+/Order Display System/obj/Debug/TempPE

@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.36128.20
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order Print Utility", "Order Display System\Order Print Utility.csproj", "{C1C9C301-641A-4984-AF88-C8C8DBF2ED50}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PrintUtility", "PrintUtility\PrintUtility.vdproj", "{38612748-4548-4B86-AB0C-868BD60AD8A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1C9C301-641A-4984-AF88-C8C8DBF2ED50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1C9C301-641A-4984-AF88-C8C8DBF2ED50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1C9C301-641A-4984-AF88-C8C8DBF2ED50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1C9C301-641A-4984-AF88-C8C8DBF2ED50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38612748-4548-4B86-AB0C-868BD60AD8A1}.Debug|Any CPU.ActiveCfg = Debug
+		{38612748-4548-4B86-AB0C-868BD60AD8A1}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BCDEED87-EAD3-4045-A15B-51F90E3F482F}
+	EndGlobalSection
+EndGlobal

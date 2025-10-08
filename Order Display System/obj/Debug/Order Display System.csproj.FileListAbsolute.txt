@@ -1,0 +1,322 @@
+D:\Client Side Running Project\Nazeer Foods\Order Display System\Order Display System\bin\Debug\Order Display System.exe
+D:\Client Side Running Project\Nazeer Foods\Order Display System\Order Display System\bin\Debug\Order Display System.pdb
+D:\Client Side Running Project\Nazeer Foods\Order Display System\Order Display System\obj\Debug\ResolveAssemblyReference.cache
+D:\Client Side Running Project\Nazeer Foods\Order Display System\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+D:\Client Side Running Project\Nazeer Foods\Order Display System\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+D:\Client Side Running Project\Nazeer Foods\Order Display System\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.Cache
+D:\Client Side Running Project\Nazeer Foods\Order Display System\Order Display System\obj\Debug\Order Display System.exe
+D:\Client Side Running Project\Nazeer Foods\Order Display System\Order Display System\obj\Debug\Order Display System.pdb
+D:\Client Side Running Project\Nazeer Foods\Order Display System\Order Display System\bin\Debug\FullScreenMode.dll
+D:\Client Side Running Project\Nazeer Foods\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+D:\Client Side Running Project\Nazeer Foods\Order Display System\Order Display System\bin\Debug\Order Display System.exe.config
+D:\Client Side Running Project\Nazeer Foods\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+D:\Client Side Running Project\Nazeer Foods\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+E:\Order Display System\Order Display System\bin\Debug\Order Display System.exe.config
+E:\Order Display System\Order Display System\bin\Debug\Order Display System.exe
+E:\Order Display System\Order Display System\bin\Debug\Order Display System.pdb
+E:\Order Display System\Order Display System\obj\Debug\ResolveAssemblyReference.cache
+E:\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+E:\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+E:\Order Display System\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+E:\Order Display System\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+E:\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+E:\Order Display System\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.Cache
+E:\Order Display System\Order Display System\obj\Debug\Order Display System.exe
+E:\Order Display System\Order Display System\obj\Debug\Order Display System.pdb
+E:\Order Display System\Order Display System\bin\Debug\FullScreenMode.dll
+D:\project\Nazeer Food\latest Nazeer Foods 20-01-2014\Nazeer_Display\Order Display System\Order Display System\bin\Debug\Order Display System.exe.config
+D:\project\Nazeer Food\latest Nazeer Foods 20-01-2014\Nazeer_Display\Order Display System\Order Display System\obj\Debug\Order Display System.exe
+D:\project\Nazeer Food\latest Nazeer Foods 20-01-2014\Nazeer_Display\Order Display System\Order Display System\obj\Debug\Order Display System.pdb
+D:\project\Nazeer Food\latest Nazeer Foods 20-01-2014\Nazeer_Display\Order Display System\Order Display System\bin\Debug\Order Display System.exe
+D:\project\Nazeer Food\latest Nazeer Foods 20-01-2014\Nazeer_Display\Order Display System\Order Display System\bin\Debug\Order Display System.pdb
+D:\project\Nazeer Food\latest Nazeer Foods 20-01-2014\Nazeer_Display\Order Display System\Order Display System\obj\Debug\ResolveAssemblyReference.cache
+D:\project\Nazeer Food\latest Nazeer Foods 20-01-2014\Nazeer_Display\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+D:\project\Nazeer Food\latest Nazeer Foods 20-01-2014\Nazeer_Display\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+D:\project\Nazeer Food\latest Nazeer Foods 20-01-2014\Nazeer_Display\Order Display System\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+D:\project\Nazeer Food\latest Nazeer Foods 20-01-2014\Nazeer_Display\Order Display System\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+D:\project\Nazeer Food\latest Nazeer Foods 20-01-2014\Nazeer_Display\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+D:\project\Nazeer Food\latest Nazeer Foods 20-01-2014\Nazeer_Display\Order Display System\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.Cache
+C:\Users\ROMIO\Desktop\Order Display System\Order Display System\bin\Debug\Order Display System.exe.config
+C:\Users\ROMIO\Desktop\Order Display System\Order Display System\obj\Debug\Order Display System.exe
+C:\Users\ROMIO\Desktop\Order Display System\Order Display System\obj\Debug\Order Display System.pdb
+C:\Users\ROMIO\Desktop\Order Display System\Order Display System\bin\Debug\Order Display System.exe
+C:\Users\ROMIO\Desktop\Order Display System\Order Display System\bin\Debug\Order Display System.pdb
+C:\Users\ROMIO\Desktop\Order Display System\Order Display System\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ROMIO\Desktop\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+C:\Users\ROMIO\Desktop\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+C:\Users\ROMIO\Desktop\Order Display System\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+C:\Users\ROMIO\Desktop\Order Display System\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+C:\Users\ROMIO\Desktop\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+C:\Users\ROMIO\Desktop\Order Display System\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.Cache
+C:\Users\Romio5\Desktop\Sujit\Order Display System\Order Display System\bin\Debug\Order Display System.exe.config
+C:\Users\Romio5\Desktop\Sujit\Order Display System\Order Display System\obj\Debug\Order Display System.exe
+C:\Users\Romio5\Desktop\Sujit\Order Display System\Order Display System\obj\Debug\Order Display System.pdb
+C:\Users\Romio5\Desktop\Sujit\Order Display System\Order Display System\bin\Debug\Order Display System.exe
+C:\Users\Romio5\Desktop\Sujit\Order Display System\Order Display System\bin\Debug\Order Display System.pdb
+C:\Users\Romio5\Desktop\Sujit\Order Display System\Order Display System\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Romio5\Desktop\Sujit\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+C:\Users\Romio5\Desktop\Sujit\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+C:\Users\Romio5\Desktop\Sujit\Order Display System\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+C:\Users\Romio5\Desktop\Sujit\Order Display System\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+C:\Users\Romio5\Desktop\Sujit\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+C:\Users\Romio5\Desktop\Sujit\Order Display System\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.Cache
+C:\Users\Mohit\Desktop\Order Display System\Order Display System\bin\Debug\Order Display System.exe.config
+C:\Users\Mohit\Desktop\Order Display System\Order Display System\obj\Debug\Order Display System.exe
+C:\Users\Mohit\Desktop\Order Display System\Order Display System\obj\Debug\Order Display System.pdb
+C:\Users\Mohit\Desktop\Order Display System\Order Display System\bin\Debug\Order Display System.exe
+C:\Users\Mohit\Desktop\Order Display System\Order Display System\bin\Debug\Order Display System.pdb
+C:\Users\Mohit\Desktop\Order Display System\Order Display System\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Mohit\Desktop\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+C:\Users\Mohit\Desktop\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+C:\Users\Mohit\Desktop\Order Display System\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+C:\Users\Mohit\Desktop\Order Display System\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+C:\Users\Mohit\Desktop\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+C:\Users\Mohit\Desktop\Order Display System\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.Cache
+D:\Client Side Running Project\Nazeer Foods\Nazeer Display\Order Display System\Order Display System\bin\Debug\Order Display System.exe.config
+D:\Client Side Running Project\Nazeer Foods\Nazeer Display\Order Display System\Order Display System\obj\Debug\Order Display System.exe
+D:\Client Side Running Project\Nazeer Foods\Nazeer Display\Order Display System\Order Display System\obj\Debug\Order Display System.pdb
+D:\Client Side Running Project\Nazeer Foods\Copy\Nazeer Display\Order Display System\Order Display System\bin\Debug\Order Display System.exe.config
+D:\Client Side Running Project\Nazeer Foods\Copy\Nazeer Display\Order Display System\Order Display System\obj\Debug\Order Display System.exe
+D:\Client Side Running Project\Nazeer Foods\Copy\Nazeer Display\Order Display System\Order Display System\obj\Debug\Order Display System.pdb
+D:\Client Side Running Project\Nazeer Foods\Copy\Nazeer Display\Order Display System\Order Display System\bin\Debug\Order Display System.exe
+D:\Client Side Running Project\Nazeer Foods\Copy\Nazeer Display\Order Display System\Order Display System\bin\Debug\Order Display System.pdb
+D:\Client Side Running Project\Nazeer Foods\Copy\Nazeer Display\Order Display System\Order Display System\obj\Debug\ResolveAssemblyReference.cache
+D:\Client Side Running Project\Nazeer Foods\Copy\Nazeer Display\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+D:\Client Side Running Project\Nazeer Foods\Copy\Nazeer Display\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+D:\Client Side Running Project\Nazeer Foods\Copy\Nazeer Display\Order Display System\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+D:\Client Side Running Project\Nazeer Foods\Copy\Nazeer Display\Order Display System\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+D:\Client Side Running Project\Nazeer Foods\Copy\Nazeer Display\Order Display System\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+D:\Client Side Running Project\Nazeer Foods\Copy\Nazeer Display\Order Display System\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.Cache
+D:\Client Side Running Project\KDS\Order Display System\bin\Debug\Order Display System.exe.config
+D:\Client Side Running Project\KDS\Order Display System\obj\Debug\Order Display System.exe
+D:\Client Side Running Project\KDS\Order Display System\obj\Debug\Order Display System.pdb
+D:\Client Side Running Project\KDS\Order Display System\bin\Debug\Order Display System.exe
+D:\Client Side Running Project\KDS\Order Display System\bin\Debug\Order Display System.pdb
+D:\Client Side Running Project\KDS\Order Display System\obj\Debug\ResolveAssemblyReference.cache
+D:\Client Side Running Project\KDS\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+D:\Client Side Running Project\KDS\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+D:\Client Side Running Project\KDS\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+D:\Client Side Running Project\KDS\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+D:\Client Side Running Project\KDS\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+D:\Client Side Running Project\KDS\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.Cache
+D:\Client Side Running Project\KDS\Order Display System\obj\Debug\Order_Display_System.UI.ItemDetail.resources
+D:\Client Side Running Project\KDS\KDS Apps\Order Display System\bin\Debug\Order Display System.exe.config
+D:\Client Side Running Project\KDS\KDS Apps\Order Display System\obj\Debug\Order Display System.exe
+D:\Client Side Running Project\KDS\KDS Apps\Order Display System\obj\Debug\Order Display System.pdb
+D:\Client Side Running Project\KDS\KDS Apps\Order Display System\bin\Debug\Order Display System.exe
+D:\Client Side Running Project\KDS\KDS Apps\Order Display System\bin\Debug\Order Display System.pdb
+D:\Client Side Running Project\KDS\KDS Apps\Order Display System\obj\Debug\ResolveAssemblyReference.cache
+D:\Client Side Running Project\KDS\KDS Apps\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+D:\Client Side Running Project\KDS\KDS Apps\Order Display System\obj\Debug\Order_Display_System.UI.ItemDetail.resources
+D:\Client Side Running Project\KDS\KDS Apps\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+D:\Client Side Running Project\KDS\KDS Apps\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+D:\Client Side Running Project\KDS\KDS Apps\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+D:\Client Side Running Project\KDS\KDS Apps\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+D:\Client Side Running Project\KDS\KDS Apps\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.Cache
+D:\Client Side Running Project\KDS\KDS Apps\Order Display System\bin\Debug\RTFLib.dll
+D:\Client Side Running Project\KDS\KDS Apps\Order Display System\bin\Debug\RTFLib.pdb
+D:\Client Side Running Project\Tawak\KDS Apps\Order Display System\bin\Debug\Order Display System.exe.config
+D:\Client Side Running Project\Tawak\KDS Apps\Order Display System\obj\Debug\Order Display System.exe
+D:\Client Side Running Project\Tawak\KDS Apps\Order Display System\obj\Debug\Order Display System.pdb
+D:\Client Side Running Project\Tawak\KDS Apps\Order Display System\bin\Debug\Order Display System.exe
+D:\Client Side Running Project\Tawak\KDS Apps\Order Display System\bin\Debug\Order Display System.pdb
+D:\Client Side Running Project\Tawak\KDS Apps\Order Display System\bin\Debug\RTFLib.dll
+D:\Client Side Running Project\Tawak\KDS Apps\Order Display System\bin\Debug\RTFLib.pdb
+D:\Client Side Running Project\Tawak\KDS Apps\Order Display System\obj\Debug\ResolveAssemblyReference.cache
+D:\Client Side Running Project\Tawak\KDS Apps\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+D:\Client Side Running Project\Tawak\KDS Apps\Order Display System\obj\Debug\Order_Display_System.UI.ItemDetail.resources
+D:\Client Side Running Project\Tawak\KDS Apps\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+D:\Client Side Running Project\Tawak\KDS Apps\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+D:\Client Side Running Project\Tawak\KDS Apps\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+D:\Client Side Running Project\Tawak\KDS Apps\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+D:\Client Side Running Project\Tawak\KDS Apps\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.Cache
+D:\Client Side Running Project\Tawak\POS Apps Tawak 20-10-2014\KDS Apps\Order Display System\bin\Debug\Order Display System.exe.config
+D:\Client Side Running Project\Tawak\POS Apps Tawak 20-10-2014\KDS Apps\Order Display System\obj\Debug\Order Display System.exe
+D:\Client Side Running Project\Tawak\POS Apps Tawak 20-10-2014\KDS Apps\Order Display System\obj\Debug\Order Display System.pdb
+D:\Client Side Running Project\Tawak\POS Apps Tawak 20-10-2014\KDS Apps\Order Display System\bin\Debug\Order Display System.exe
+D:\Client Side Running Project\Tawak\POS Apps Tawak 20-10-2014\KDS Apps\Order Display System\bin\Debug\Order Display System.pdb
+D:\Client Side Running Project\Tawak\POS Apps Tawak 20-10-2014\KDS Apps\Order Display System\bin\Debug\RTFLib.pdb
+D:\Client Side Running Project\Tawak\POS Apps Tawak 20-10-2014\KDS Apps\Order Display System\obj\Debug\ResolveAssemblyReference.cache
+D:\Client Side Running Project\Tawak\POS Apps Tawak 20-10-2014\KDS Apps\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+D:\Client Side Running Project\Tawak\POS Apps Tawak 20-10-2014\KDS Apps\Order Display System\obj\Debug\Order_Display_System.UI.ItemDetail.resources
+D:\Client Side Running Project\Tawak\POS Apps Tawak 20-10-2014\KDS Apps\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+D:\Client Side Running Project\Tawak\POS Apps Tawak 20-10-2014\KDS Apps\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+D:\Client Side Running Project\Tawak\POS Apps Tawak 20-10-2014\KDS Apps\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+D:\Client Side Running Project\Tawak\POS Apps Tawak 20-10-2014\KDS Apps\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+D:\Client Side Running Project\Tawak\POS Apps Tawak 20-10-2014\KDS Apps\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.Cache
+D:\Client Side Running Project\Tawak\letest Tawak 10-06_2015\POS Apps Tawak 09-04-2015\KDS Apps\Order Display System\bin\Debug\Order Display System.exe.config
+D:\Client Side Running Project\Tawak\letest Tawak 10-06_2015\POS Apps Tawak 09-04-2015\KDS Apps\Order Display System\obj\Debug\Order Display System.exe
+D:\Client Side Running Project\Tawak\letest Tawak 10-06_2015\POS Apps Tawak 09-04-2015\KDS Apps\Order Display System\obj\Debug\Order Display System.pdb
+D:\Application\Tawak New POS Applitaion 04-08-2016\POS Apps Tawak 04-08-2016\KDS Apps\Order Display System\bin\Debug\Order Display System.exe.config
+D:\Application\Tawak New POS Applitaion 04-08-2016\POS Apps Tawak 04-08-2016\KDS Apps\Order Display System\obj\Debug\Order Display System.exe
+D:\Application\Tawak New POS Applitaion 04-08-2016\POS Apps Tawak 04-08-2016\KDS Apps\Order Display System\obj\Debug\Order Display System.pdb
+D:\Application\Tawak New POS Applitaion 04-08-2016\POS Apps Tawak 04-08-2016\KDS Apps\Order Display System\bin\Debug\Order Display System.exe
+D:\Application\Tawak New POS Applitaion 04-08-2016\POS Apps Tawak 04-08-2016\KDS Apps\Order Display System\bin\Debug\Order Display System.pdb
+D:\Application\Tawak New POS Applitaion 04-08-2016\POS Apps Tawak 04-08-2016\KDS Apps\Order Display System\obj\Debug\ResolveAssemblyReference.cache
+D:\Application\Tawak New POS Applitaion 04-08-2016\POS Apps Tawak 04-08-2016\KDS Apps\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+D:\Application\Tawak New POS Applitaion 04-08-2016\POS Apps Tawak 04-08-2016\KDS Apps\Order Display System\obj\Debug\Order_Display_System.UI.ItemDetail.resources
+D:\Application\Tawak New POS Applitaion 04-08-2016\POS Apps Tawak 04-08-2016\KDS Apps\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+D:\Application\Tawak New POS Applitaion 04-08-2016\POS Apps Tawak 04-08-2016\KDS Apps\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+D:\Application\Tawak New POS Applitaion 04-08-2016\POS Apps Tawak 04-08-2016\KDS Apps\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+D:\Application\Tawak New POS Applitaion 04-08-2016\POS Apps Tawak 04-08-2016\KDS Apps\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+D:\Application\Tawak New POS Applitaion 04-08-2016\POS Apps Tawak 04-08-2016\KDS Apps\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.Cache
+D:\Application\Fine dine\KDS Apps\Order Display System\bin\Debug\Order Display System.exe.config
+D:\Application\Fine dine\KDS Apps\Order Display System\obj\Debug\Order Display System.exe
+D:\Application\Fine dine\KDS Apps\Order Display System\obj\Debug\Order Display System.pdb
+D:\Application\Fine dine\KDS Apps\Order Display System\bin\Debug\Order Display System.exe
+D:\Application\Fine dine\KDS Apps\Order Display System\bin\Debug\Order Display System.pdb
+D:\Application\Fine dine\KDS Apps\Order Display System\obj\Debug\ResolveAssemblyReference.cache
+D:\Application\Fine dine\KDS Apps\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+D:\Application\Fine dine\KDS Apps\Order Display System\obj\Debug\Order_Display_System.UI.ItemDetail.resources
+D:\Application\Fine dine\KDS Apps\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+D:\Application\Fine dine\KDS Apps\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+D:\Application\Fine dine\KDS Apps\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+D:\Application\Fine dine\KDS Apps\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+D:\Application\Fine dine\KDS Apps\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.Cache
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.1\Order Display System\bin\Debug\Order Display System.exe.config
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.1\Order Display System\obj\Debug\Order Display System.exe
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.1\Order Display System\obj\Debug\Order Display System.pdb
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.1\Order Display System\bin\Debug\Order Display System.exe
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.1\Order Display System\bin\Debug\Order Display System.pdb
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.1\Order Display System\obj\Debug\ResolveAssemblyReference.cache
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.1\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.1\Order Display System\obj\Debug\Order_Display_System.UI.ItemDetail.resources
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.1\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.1\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.1\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.1\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.1\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.Cache
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.2\Order Display System\bin\Debug\Order Display System.exe.config
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.2\Order Display System\bin\Debug\Order Display System.exe
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.2\Order Display System\bin\Debug\Order Display System.pdb
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.2\Order Display System\obj\Debug\ResolveAssemblyReference.cache
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.2\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.2\Order Display System\obj\Debug\Order_Display_System.UI.ItemDetail.resources
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.2\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.2\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.2\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.2\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.2\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.TSC_Print.resources
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.2\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.Cache
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.2\Order Display System\obj\Debug\Order Display System.exe
+D:\Application\Fine dine\KDS Apps\KDS Version 1.0.2\Order Display System\obj\Debug\Order Display System.pdb
+F:\Application\FNB\KDS Version 1.0.2\Order Display System\bin\Debug\Order Display System.exe.config
+F:\Application\FNB\KDS Version 1.0.2\Order Display System\obj\Debug\Order Display System.exe
+F:\Application\FNB\KDS Version 1.0.2\Order Display System\obj\Debug\Order Display System.pdb
+F:\Application\FNB\KDS Version 1.0.2\Order Display System\bin\Debug\Order Display System.exe
+F:\Application\FNB\KDS Version 1.0.2\Order Display System\bin\Debug\Order Display System.pdb
+F:\Application\FNB\KDS Version 1.0.2\Order Display System\obj\Debug\ResolveAssemblyReference.cache
+F:\Application\FNB\KDS Version 1.0.2\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+F:\Application\FNB\KDS Version 1.0.2\Order Display System\obj\Debug\Order_Display_System.UI.ItemDetail.resources
+F:\Application\FNB\KDS Version 1.0.2\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+F:\Application\FNB\KDS Version 1.0.2\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+F:\Application\FNB\KDS Version 1.0.2\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+F:\Application\FNB\KDS Version 1.0.2\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+F:\Application\FNB\KDS Version 1.0.2\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.TSC_Print.resources
+F:\Application\FNB\KDS Version 1.0.2\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.Cache
+F:\Application\FNB\KDS\KDS Version 1.0.2\Order Display System\bin\Debug\Order Display System.exe.config
+F:\Application\FNB\KDS\KDS Version 1.0.2\Order Display System\obj\Debug\Order Display System.exe
+F:\Application\FNB\KDS\KDS Version 1.0.2\Order Display System\obj\Debug\Order Display System.pdb
+F:\Application\FNB\KDS\KDS Version 1.0.2\Order Display System\bin\Debug\Order Display System.exe
+F:\Application\FNB\KDS\KDS Version 1.0.2\Order Display System\bin\Debug\Order Display System.pdb
+F:\Application\FNB\KDS\KDS Version 1.0.2\Order Display System\obj\Debug\ResolveAssemblyReference.cache
+F:\Application\FNB\KDS\KDS Version 1.0.2\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+F:\Application\FNB\KDS\KDS Version 1.0.2\Order Display System\obj\Debug\Order_Display_System.UI.ItemDetail.resources
+F:\Application\FNB\KDS\KDS Version 1.0.2\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+F:\Application\FNB\KDS\KDS Version 1.0.2\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+F:\Application\FNB\KDS\KDS Version 1.0.2\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+F:\Application\FNB\KDS\KDS Version 1.0.2\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+F:\Application\FNB\KDS\KDS Version 1.0.2\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.TSC_Print.resources
+F:\Application\FNB\KDS\KDS Version 1.0.2\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.Cache
+F:\Application\FNB\KDS\KDS Version 1.0.3\Order Display System\bin\Debug\Order Display System.exe.config
+F:\Application\FNB\KDS\KDS Version 1.0.3\Order Display System\obj\Debug\Order Display System.exe
+F:\Application\FNB\KDS\KDS Version 1.0.3\Order Display System\obj\Debug\Order Display System.pdb
+F:\Application\FNB\KDS\KDS Version 1.0.3\Order Display System\bin\Debug\Order Display System.exe
+F:\Application\FNB\KDS\KDS Version 1.0.3\Order Display System\bin\Debug\Order Display System.pdb
+F:\Application\FNB\KDS\KDS Version 1.0.3\Order Display System\obj\Debug\ResolveAssemblyReference.cache
+F:\Application\FNB\KDS\KDS Version 1.0.3\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+F:\Application\FNB\KDS\KDS Version 1.0.3\Order Display System\obj\Debug\Order_Display_System.UI.ItemDetail.resources
+F:\Application\FNB\KDS\KDS Version 1.0.3\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+F:\Application\FNB\KDS\KDS Version 1.0.3\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+F:\Application\FNB\KDS\KDS Version 1.0.3\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+F:\Application\FNB\KDS\KDS Version 1.0.3\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+F:\Application\FNB\KDS\KDS Version 1.0.3\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.TSC_Print.resources
+F:\Application\FNB\KDS\KDS Version 1.0.3\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.Cache
+F:\Application\FNB\KDS\KDS Version 1.0.3 -VS2017\Order Display System\bin\Debug\Order Display System.exe.config
+F:\Application\FNB\KDS\KDS Version 1.0.3 -VS2017\Order Display System\bin\Debug\Order Display System.exe
+F:\Application\FNB\KDS\KDS Version 1.0.3 -VS2017\Order Display System\bin\Debug\Order Display System.pdb
+F:\Application\FNB\KDS\KDS Version 1.0.3 -VS2017\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+F:\Application\FNB\KDS\KDS Version 1.0.3 -VS2017\Order Display System\obj\Debug\Order_Display_System.UI.ItemDetail.resources
+F:\Application\FNB\KDS\KDS Version 1.0.3 -VS2017\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+F:\Application\FNB\KDS\KDS Version 1.0.3 -VS2017\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+F:\Application\FNB\KDS\KDS Version 1.0.3 -VS2017\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+F:\Application\FNB\KDS\KDS Version 1.0.3 -VS2017\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+F:\Application\FNB\KDS\KDS Version 1.0.3 -VS2017\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.TSC_Print.resources
+F:\Application\FNB\KDS\KDS Version 1.0.3 -VS2017\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.cache
+F:\Application\FNB\KDS\KDS Version 1.0.3 -VS2017\Order Display System\obj\Debug\Order Display System.csproj.CoreCompileInputs.cache
+F:\Application\FNB\KDS\KDS Version 1.0.3 -VS2017\Order Display System\obj\Debug\Order Display System.csproj.CopyComplete
+F:\Application\FNB\KDS\KDS Version 1.0.3 -VS2017\Order Display System\obj\Debug\Order Display System.exe
+F:\Application\FNB\KDS\KDS Version 1.0.3 -VS2017\Order Display System\obj\Debug\Order Display System.pdb
+F:\Application\FNB\KDS\KDS Version 1.0.4 -VS2017\Order Display System\bin\Debug\Order Display System.exe.config
+F:\Application\FNB\KDS\KDS Version 1.0.4 -VS2017\Order Display System\bin\Debug\Order Display System.exe
+F:\Application\FNB\KDS\KDS Version 1.0.4 -VS2017\Order Display System\bin\Debug\Order Display System.pdb
+F:\Application\FNB\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+F:\Application\FNB\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\Order_Display_System.UI.ItemDetail.resources
+F:\Application\FNB\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+F:\Application\FNB\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+F:\Application\FNB\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+F:\Application\FNB\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+F:\Application\FNB\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.TSC_Print.resources
+F:\Application\FNB\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.cache
+F:\Application\FNB\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\Order Display System.csproj.CoreCompileInputs.cache
+F:\Application\FNB\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\Order Display System.csproj.CopyComplete
+F:\Application\FNB\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\Order Display System.exe
+F:\Application\FNB\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\Order Display System.pdb
+E:\Development\KDS\KDS Version 1.0.4 -VS2017\Order Display System\bin\Debug\Order Display System.exe.config
+E:\Development\KDS\KDS Version 1.0.4 -VS2017\Order Display System\bin\Debug\Order Display System.exe
+E:\Development\KDS\KDS Version 1.0.4 -VS2017\Order Display System\bin\Debug\Order Display System.pdb
+E:\Development\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+E:\Development\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\Order_Display_System.UI.ItemDetail.resources
+E:\Development\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+E:\Development\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+E:\Development\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+E:\Development\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+E:\Development\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.TSC_Print.resources
+E:\Development\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.cache
+E:\Development\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\Order Display System.csproj.CoreCompileInputs.cache
+E:\Development\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\Order Display System.csproj.CopyComplete
+E:\Development\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\Order Display System.exe
+E:\Development\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\Order Display System.pdb
+E:\Development\KDS\KDS Version 1.0.4 -VS2017\Order Display System\obj\Debug\Order Display System.csprojAssemblyReference.cache
+E:\Development\KDS\KDS Version 1.0.5 -VS2017\Order Display System\bin\Debug\Order Display System.exe.config
+E:\Development\KDS\KDS Version 1.0.5 -VS2017\Order Display System\bin\Debug\Order Display System.exe
+E:\Development\KDS\KDS Version 1.0.5 -VS2017\Order Display System\bin\Debug\Order Display System.pdb
+E:\Development\KDS\KDS Version 1.0.5 -VS2017\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+E:\Development\KDS\KDS Version 1.0.5 -VS2017\Order Display System\obj\Debug\Order_Display_System.UI.ItemDetail.resources
+E:\Development\KDS\KDS Version 1.0.5 -VS2017\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+E:\Development\KDS\KDS Version 1.0.5 -VS2017\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+E:\Development\KDS\KDS Version 1.0.5 -VS2017\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+E:\Development\KDS\KDS Version 1.0.5 -VS2017\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+E:\Development\KDS\KDS Version 1.0.5 -VS2017\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.TSC_Print.resources
+E:\Development\KDS\KDS Version 1.0.5 -VS2017\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.cache
+E:\Development\KDS\KDS Version 1.0.5 -VS2017\Order Display System\obj\Debug\Order Display System.csproj.CoreCompileInputs.cache
+E:\Development\KDS\KDS Version 1.0.5 -VS2017\Order Display System\obj\Debug\Order Display System.csproj.CopyComplete
+E:\Development\KDS\KDS Version 1.0.5 -VS2017\Order Display System\obj\Debug\Order Display System.exe
+E:\Development\KDS\KDS Version 1.0.5 -VS2017\Order Display System\obj\Debug\Order Display System.pdb
+E:\Development\PrintUtility\Order Display System\bin\Debug\Order Display System.exe.config
+E:\Development\PrintUtility\Order Display System\bin\Debug\Order Display System.exe
+E:\Development\PrintUtility\Order Display System\bin\Debug\Order Display System.pdb
+E:\Development\PrintUtility\Order Display System\obj\Debug\Order_Display_System.UI.Data_Center.resources
+E:\Development\PrintUtility\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.FinishOrderDisplay.resources
+E:\Development\PrintUtility\Order Display System\obj\Debug\Order_Display_System.UI.ItemDetail.resources
+E:\Development\PrintUtility\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.ModifyOrderStstus.resources
+E:\Development\PrintUtility\Order Display System\obj\Debug\Order_Display_System.Form1.resources
+E:\Development\PrintUtility\Order Display System\obj\Debug\Order_Display_System.Properties.Resources.resources
+E:\Development\PrintUtility\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.OrderDisplayItem.resources
+E:\Development\PrintUtility\Order Display System\obj\Debug\TuchScreenApp1Jan2013.UI.TSC_Print.resources
+E:\Development\PrintUtility\Order Display System\obj\Debug\Order Display System.csproj.GenerateResource.cache
+E:\Development\PrintUtility\Order Display System\obj\Debug\Order Display System.csproj.CoreCompileInputs.cache
+E:\Development\PrintUtility\Order Display System\obj\Debug\Order Display System.csproj.CopyComplete
+E:\Development\PrintUtility\Order Display System\obj\Debug\Order Display System.exe
+E:\Development\PrintUtility\Order Display System\obj\Debug\Order Display System.pdb
+E:\Development\PrintUtility\Order Display System\obj\Debug\Order Display System.csprojAssemblyReference.cache

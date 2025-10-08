@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C1C9C301-641A-4984-AF88-C8C8DBF2ED50}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Order_Display_System</RootNamespace>
+    <AssemblyName>Order Display System</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FullScreenMode, Version=1.0.2474.24098, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Nazeer Foods DSC Version 1.3\HiraSweets\bin\Debug\FullScreenMode.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="RTFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Demo Application\RTFLib\RTFLib\RTFLib\bin\Debug\RTFLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Net">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\ADOC.cs" />
+    <Compile Include="App_Code\clsConfigSettings.cs" />
+    <Compile Include="App_Code\clsDLL.cs" />
+    <Compile Include="App_Code\clsPrintKOTSummery.cs" />
+    <Compile Include="App_Code\clsTempData.cs" />
+    <Compile Include="App_Code\cls_PrintKot.cs" />
+    <Compile Include="App_Code\cls_SqlConnection.cs" />
+    <Compile Include="App_Code\LPrinter.cs" />
+    <Compile Include="RTF\IRTFCell.cs" />
+    <Compile Include="RTF\IRtfProcessor.cs" />
+    <Compile Include="RTF\IRTFRow.cs" />
+    <Compile Include="RTF\RTFAlignment.cs" />
+    <Compile Include="RTF\RTFBorderSide.cs" />
+    <Compile Include="RTF\RTFBuilder.cs" />
+    <Compile Include="RTF\RTFBuilder.RTFFonts.cs" />
+    <Compile Include="RTF\RTFBuilder.RTFFormatWrap.cs" />
+    <Compile Include="RTF\RTFBuilder.RTFParaWrap.cs" />
+    <Compile Include="RTF\RTFBuilder.UnWrapped.cs" />
+    <Compile Include="RTF\RTFBuilderbase.cs" />
+    <Compile Include="RTF\RTFCell.cs" />
+    <Compile Include="RTF\RTFCellDefinition.cs" />
+    <Compile Include="RTF\RTFCellDefinitionBuilder.cs" />
+    <Compile Include="RTF\RTFFont.cs" />
+    <Compile Include="RTF\RTFImage.cs" />
+    <Compile Include="RTF\RTFRow.cs" />
+    <Compile Include="RTF\RTFRowDefinition.cs" />
+    <Compile Include="RTF\RTFUtil.cs" />
+    <Compile Include="UI\FinishOrderDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FinishOrderDisplay.designer.cs">
+      <DependentUpon>FinishOrderDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ItemDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ItemDetail.Designer.cs">
+      <DependentUpon>ItemDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ModifyOrderStstus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ModifyOrderStstus.designer.cs">
+      <DependentUpon>ModifyOrderStstus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Order Display System.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Order Display System.Designer.cs">
+      <DependentUpon>Order Display System.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="UI\FinishOrderDisplay.resx">
+      <DependentUpon>FinishOrderDisplay.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ItemDetail.resx">
+      <DependentUpon>ItemDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ModifyOrderStstus.resx">
+      <DependentUpon>ModifyOrderStstus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Order Display System.resx">
+      <DependentUpon>Order Display System.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OrderDisplayItem.resx">
+      <DependentUpon>OrderDisplayItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TSC_Print.resx">
+      <DependentUpon>TSC_Print.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UI\OrderDisplayItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\OrderDisplayItem.designer.cs">
+      <DependentUpon>OrderDisplayItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TSC_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TSC_Print.designer.cs">
+      <DependentUpon>TSC_Print.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo123.jpg" />
+    <None Include="Resources\logo.jpg" />
+    <None Include="Resources\kitchen.jpg" />
+    <None Include="Resources\Kitchen1.jpg" />
+    <Content Include="Resources\barCodei.png" />
+    <Content Include="Resources\settings.png" />
+    <Content Include="Resources\Settings123.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

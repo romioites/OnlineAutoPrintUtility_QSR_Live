@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsAssortedTemp" targetNamespace="http://tempuri.org/dsAssortedTemp.xsd" xmlns:mstns="http://tempuri.org/dsAssortedTemp.xsd" xmlns="http://tempuri.org/dsAssortedTemp.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsAssortedTemp" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsAssortedTemp" msprop:Generator_DataSetName="dsAssortedTemp" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tbl_AssortedItem" msprop:Generator_UserTableName="tbl_AssortedItem" msprop:Generator_RowDeletedName="tbl_AssortedItemRowDeleted" msprop:Generator_RowChangedName="tbl_AssortedItemRowChanged" msprop:Generator_RowClassName="tbl_AssortedItemRow" msprop:Generator_RowChangingName="tbl_AssortedItemRowChanging" msprop:Generator_RowEvArgName="tbl_AssortedItemRowChangeEvent" msprop:Generator_RowEvHandlerName="tbl_AssortedItemRowChangeEventHandler" msprop:Generator_TableClassName="tbl_AssortedItemDataTable" msprop:Generator_TableVarName="tabletbl_AssortedItem" msprop:Generator_RowDeletingName="tbl_AssortedItemRowDeleting" msprop:Generator_TablePropName="tbl_AssortedItem">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="i_code_fk" msprop:Generator_UserColumnName="i_code_fk" msprop:Generator_ColumnVarNameInTable="columni_code_fk" msprop:Generator_ColumnPropNameInRow="i_code_fk" msprop:Generator_ColumnPropNameInTable="i_code_fkColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="i_Code" msprop:Generator_UserColumnName="i_Code" msprop:Generator_ColumnVarNameInTable="columni_Code" msprop:Generator_ColumnPropNameInRow="i_Code" msprop:Generator_ColumnPropNameInTable="i_CodeColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Qty" msprop:Generator_UserColumnName="Qty" msprop:Generator_ColumnVarNameInTable="columnQty" msprop:Generator_ColumnPropNameInRow="Qty" msprop:Generator_ColumnPropNameInTable="QtyColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ItemIndex" msprop:Generator_UserColumnName="ItemIndex" msprop:Generator_ColumnPropNameInRow="ItemIndex" msprop:Generator_ColumnVarNameInTable="columnItemIndex" msprop:Generator_ColumnPropNameInTable="ItemIndexColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="i_name" msprop:Generator_UserColumnName="i_name" msprop:Generator_ColumnPropNameInRow="i_name" msprop:Generator_ColumnVarNameInTable="columni_name" msprop:Generator_ColumnPropNameInTable="i_nameColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

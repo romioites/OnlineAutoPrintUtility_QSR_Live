@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BoltKOT" targetNamespace="http://tempuri.org/BoltKOT.xsd" xmlns:mstns="http://tempuri.org/BoltKOT.xsd" xmlns="http://tempuri.org/BoltKOT.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BoltKOT" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="BoltKOT" msprop:Generator_UserDSName="BoltKOT">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tbl_bill_tran" msprop:Generator_TableClassName="tbl_bill_tranDataTable" msprop:Generator_TableVarName="tabletbl_bill_tran" msprop:Generator_TablePropName="tbl_bill_tran" msprop:Generator_RowDeletingName="tbl_bill_tranRowDeleting" msprop:Generator_RowChangingName="tbl_bill_tranRowChanging" msprop:Generator_RowEvHandlerName="tbl_bill_tranRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_bill_tranRowDeleted" msprop:Generator_UserTableName="tbl_bill_tran" msprop:Generator_RowChangedName="tbl_bill_tranRowChanged" msprop:Generator_RowEvArgName="tbl_bill_tranRowChangeEvent" msprop:Generator_RowClassName="tbl_bill_tranRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="I_Name" msprop:Generator_ColumnVarNameInTable="columnI_Name" msprop:Generator_ColumnPropNameInRow="I_Name" msprop:Generator_ColumnPropNameInTable="I_NameColumn" msprop:Generator_UserColumnName="I_Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Qty" msprop:Generator_ColumnVarNameInTable="columnQty" msprop:Generator_ColumnPropNameInRow="Qty" msprop:Generator_ColumnPropNameInTable="QtyColumn" msprop:Generator_UserColumnName="Qty" type="xs:string" minOccurs="0" />
+              <xs:element name="dishComment" msprop:Generator_ColumnVarNameInTable="columndishComment" msprop:Generator_ColumnPropNameInRow="dishComment" msprop:Generator_ColumnPropNameInTable="dishCommentColumn" msprop:Generator_UserColumnName="dishComment" type="xs:string" minOccurs="0" />
+              <xs:element name="zomato_order_id" msprop:Generator_ColumnVarNameInTable="columnzomato_order_id" msprop:Generator_ColumnPropNameInRow="zomato_order_id" msprop:Generator_ColumnPropNameInTable="zomato_order_idColumn" msprop:Generator_UserColumnName="zomato_order_id" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbl_assorteditem" msprop:Generator_TableClassName="tbl_assorteditemDataTable" msprop:Generator_TableVarName="tabletbl_assorteditem" msprop:Generator_TablePropName="tbl_assorteditem" msprop:Generator_RowDeletingName="tbl_assorteditemRowDeleting" msprop:Generator_RowChangingName="tbl_assorteditemRowChanging" msprop:Generator_RowEvHandlerName="tbl_assorteditemRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_assorteditemRowDeleted" msprop:Generator_UserTableName="tbl_assorteditem" msprop:Generator_RowChangedName="tbl_assorteditemRowChanged" msprop:Generator_RowEvArgName="tbl_assorteditemRowChangeEvent" msprop:Generator_RowClassName="tbl_assorteditemRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="i_name" msprop:Generator_ColumnVarNameInTable="columni_name" msprop:Generator_ColumnPropNameInRow="i_name" msprop:Generator_ColumnPropNameInTable="i_nameColumn" msprop:Generator_UserColumnName="i_name" type="xs:string" minOccurs="0" />
+              <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:string" minOccurs="0" />
+              <xs:element name="dishComment" msprop:Generator_ColumnVarNameInTable="columndishComment" msprop:Generator_ColumnPropNameInRow="dishComment" msprop:Generator_ColumnPropNameInTable="dishCommentColumn" msprop:Generator_UserColumnName="dishComment" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C1C9C301-641A-4984-AF88-C8C8DBF2ED50}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KOTPrintUtility</RootNamespace>
+    <AssemblyName>OrderPrintUtility</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FullScreenMode, Version=1.0.2474.24098, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Nazeer Foods DSC Version 1.3\HiraSweets\bin\Debug\FullScreenMode.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="RTFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Demo Application\RTFLib\RTFLib\RTFLib\bin\Debug\RTFLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Net">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\ADOC.cs" />
+    <Compile Include="App_Code\ADOC_Services.cs" />
+    <Compile Include="App_Code\AssortedItem.cs" />
+    <Compile Include="App_Code\Class1.cs" />
+    <Compile Include="App_Code\Class2.cs" />
+    <Compile Include="App_Code\clsApplicationVariables.cs" />
+    <Compile Include="App_Code\clsBLL.cs" />
+    <Compile Include="App_Code\clsCalculateBill.cs" />
+    <Compile Include="App_Code\clsConfigSettings.cs" />
+    <Compile Include="App_Code\clsConnnectionManager.cs" />
+    <Compile Include="App_Code\clsDeal.cs" />
+    <Compile Include="App_Code\clsDLL.cs" />
+    <Compile Include="App_Code\clsGenerateBillQSR.cs" />
+    <Compile Include="App_Code\clsGenerateBillSweets.cs" />
+    <Compile Include="App_Code\ClsGenratebill_new.cs" />
+    <Compile Include="App_Code\clsGetTaxDetail.cs" />
+    <Compile Include="App_Code\clsItems.cs" />
+    <Compile Include="App_Code\clsModifyBill.cs" />
+    <Compile Include="App_Code\ClsPrintBill.cs" />
+    <Compile Include="App_Code\clsPrintBillZomato.cs" />
+    <Compile Include="App_Code\clsPrintCancelKOT.cs" />
+    <Compile Include="App_Code\clsPrintKOT.cs" />
+    <Compile Include="App_Code\clsPrintKOTSummery.cs" />
+    <Compile Include="App_Code\clsPrintKOTTable.cs" />
+    <Compile Include="App_Code\clsTempData.cs" />
+    <Compile Include="App_Code\clsUpdateOrder.cs" />
+    <Compile Include="App_Code\clsUpdateOrderStatus.cs" />
+    <Compile Include="App_Code\clsUpdateOrderStatusWebsite.cs" />
+    <Compile Include="App_Code\cls_ActionClass.cs" />
+    <Compile Include="App_Code\cls_ConfigurationMaster.cs" />
+    <Compile Include="App_Code\Cls_Exception.cs" />
+    <Compile Include="App_Code\cls_PrintBill.cs" />
+    <Compile Include="App_Code\cls_PrintKot.cs" />
+    <Compile Include="App_Code\cls_SqlConnection.cs" />
+    <Compile Include="App_Code\cls_ZomatoAPi.cs" />
+    <Compile Include="App_Code\ConsumeWebApi.cs" />
+    <Compile Include="App_Code\Data_Set\dsAssortedTemp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAssortedTemp.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Data_Set\dsDeal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDeal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Data_Set\dsItems.cs">
+      <DependentUpon>dsItems.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Data_Set\dsItems.designer.cs">
+      <DependentUpon>dsItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Data_Set\dsItems1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsItems.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Data_Set\ds_HouchScreenReport.cs">
+      <DependentUpon>ds_HouchScreenReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Data_Set\ds_HouchScreenReport.designer.cs">
+      <DependentUpon>ds_HouchScreenReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Data_Set\ds_HouchScreenReport1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_HouchScreenReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\ennum.cs" />
+    <Compile Include="App_Code\Enum.cs" />
+    <Compile Include="App_Code\FNBApp.cs" />
+    <Compile Include="App_Code\GetZomatoReferenceClass.cs" />
+    <Compile Include="App_Code\GuestMastcs.cs" />
+    <Compile Include="App_Code\IOnineOrderAutoAccept.cs" />
+    <Compile Include="App_Code\LiveSaleUpdate.cs" />
+    <Compile Include="App_Code\Loging.cs" />
+    <Compile Include="App_Code\LPrinter.cs" />
+    <Compile Include="App_Code\OrderDetailOnline.cs" />
+    <Compile Include="App_Code\OrderStatusUpdateLog.cs" />
+    <Compile Include="App_Code\PackingCharges.cs" />
+    <Compile Include="App_Code\PrintOrderAggregator.cs" />
+    <Compile Include="App_Code\QSRApp.cs" />
+    <Compile Include="App_Code\ServiceLiveSale.cs" />
+    <Compile Include="App_Code\SqlSupport.cs" />
+    <Compile Include="App_Code\SweetsApp.cs" />
+    <Compile Include="App_Dataset\BoltKOT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BoltKOT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Dataset\ds_HouchScreenReport.cs">
+      <DependentUpon>ds_HouchScreenReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Dataset\ds_HouchScreenReport.Designer.cs">
+      <DependentUpon>ds_HouchScreenReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Dataset\ds_HouchScreenReport1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_HouchScreenReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Report\rptCounterKOT_Pab.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCounterKOT_Pab.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptInvoice_HD_NO_bolt.cs">
+      <DependentUpon>rptInvoice_HD_NO_bolt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\rptInvoice_HD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptInvoice_HD.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RTF\IRTFCell.cs" />
+    <Compile Include="RTF\IRtfProcessor.cs" />
+    <Compile Include="RTF\IRTFRow.cs" />
+    <Compile Include="RTF\RTFAlignment.cs" />
+    <Compile Include="RTF\RTFBorderSide.cs" />
+    <Compile Include="RTF\RTFBuilder.cs" />
+    <Compile Include="RTF\RTFBuilder.RTFFonts.cs" />
+    <Compile Include="RTF\RTFBuilder.RTFFormatWrap.cs" />
+    <Compile Include="RTF\RTFBuilder.RTFParaWrap.cs" />
+    <Compile Include="RTF\RTFBuilder.UnWrapped.cs" />
+    <Compile Include="RTF\RTFBuilderbase.cs" />
+    <Compile Include="RTF\RTFCell.cs" />
+    <Compile Include="RTF\RTFCellDefinition.cs" />
+    <Compile Include="RTF\RTFCellDefinitionBuilder.cs" />
+    <Compile Include="RTF\RTFFont.cs" />
+    <Compile Include="RTF\RTFImage.cs" />
+    <Compile Include="RTF\RTFRow.cs" />
+    <Compile Include="RTF\RTFRowDefinition.cs" />
+    <Compile Include="RTF\RTFUtil.cs" />
+    <Compile Include="UI\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\UpdateAvailable.png" />
+    <EmbeddedResource Include="Report\rptCounterKOT_Pab.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCounterKOT_Pab.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptInvoice_HD_NO_bolt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptInvoice_HD_NO_bolt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptInvoice_HD.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptInvoice_HD.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MessageFromcs.resx">
+      <DependentUpon>MessageFromcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App_Code\Data_Set\dsAssortedTemp.xsc">
+      <DependentUpon>dsAssortedTemp.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\Data_Set\dsAssortedTemp.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAssortedTemp.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App_Code\Data_Set\dsAssortedTemp.xss">
+      <DependentUpon>dsAssortedTemp.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\Data_Set\dsDeal.xsc">
+      <DependentUpon>dsDeal.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\Data_Set\dsDeal.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDeal.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App_Code\Data_Set\dsDeal.xss">
+      <DependentUpon>dsDeal.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\Data_Set\dsItems.xsc">
+      <DependentUpon>dsItems.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\Data_Set\dsItems.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsItems1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App_Code\Data_Set\dsItems.xss">
+      <DependentUpon>dsItems.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\Data_Set\ds_HouchScreenReport.xsc">
+      <DependentUpon>ds_HouchScreenReport.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\Data_Set\ds_HouchScreenReport.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_HouchScreenReport1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App_Code\Data_Set\ds_HouchScreenReport.xss">
+      <DependentUpon>ds_HouchScreenReport.xsd</DependentUpon>
+    </None>
+    <None Include="App_Dataset\BoltKOT.xsc">
+      <DependentUpon>BoltKOT.xsd</DependentUpon>
+    </None>
+    <None Include="App_Dataset\BoltKOT.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BoltKOT.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="App_Dataset\BoltKOT.xss">
+      <DependentUpon>BoltKOT.xsd</DependentUpon>
+    </None>
+    <None Include="App_Dataset\ds_HouchScreenReport.xsc">
+      <DependentUpon>ds_HouchScreenReport.xsd</DependentUpon>
+    </None>
+    <Content Include="App_Dataset\ds_HouchScreenReport.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_HouchScreenReport1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="App_Dataset\ds_HouchScreenReport.xss">
+      <DependentUpon>ds_HouchScreenReport.xsd</DependentUpon>
+    </None>
+    <None Include="bin\Debug\Order Display System.vshost.exe.manifest" />
+    <None Include="bin\Debug\Order Print Utility.exe.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UI\MessageFromcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MessageFromcs.Designer.cs">
+      <DependentUpon>MessageFromcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ReportViewer.designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo123.jpg" />
+    <None Include="Resources\logo.jpg" />
+    <None Include="Resources\kitchen.jpg" />
+    <None Include="Resources\Kitchen1.jpg" />
+    <Content Include="bin\Debug\alarm.mp3" />
+    <Content Include="bin\Debug\alarm1.wav" />
+    <Content Include="bin\Debug\CrystalDecisions.CrystalReports.Engine.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportSource.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.Shared.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.Windows.Forms.dll" />
+    <Content Include="bin\Debug\FlashControlV71.dll" />
+    <Content Include="bin\Debug\FullScreenMode.dll" />
+    <Content Include="bin\Debug\Order Print Utility.exe" />
+    <Content Include="bin\Debug\Order Print Utility.pdb" />
+    <Content Include="bin\Debug\RTFLib.dll" />
+    <Content Include="bin\Debug\ShockwaveFlashObjects.dll" />
+    <Content Include="bin\Debug\stdole.dll" />
+    <Content Include="bin\Debug\TSCLIB.dll" />
+    <Content Include="Resources\barCodei.png" />
+    <None Include="Resources\eye-256.png" />
+    <None Include="Resources\Close32.png" />
+    <None Include="Resources\NOIMAGE.png" />
+    <None Include="Resources\database_refresh.png" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\logo.png" />
+    <Content Include="Resources\settings.png" />
+    <Content Include="Resources\Settings123.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
