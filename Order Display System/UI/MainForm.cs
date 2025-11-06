@@ -104,12 +104,16 @@ namespace KOTPrintUtility.UI
                 TimerIsStopedForLastSixtySecod = 0;
                 TmrKOTPrint.Stop();
                 if (objclsBill.CheckForInternet() == true)
-                {
-                    objclsBill.SetLableText("Processing...", lblNoofOrder);
+                {                    
                     if (btnStatus.BackColor == Color.Red)
                         btnStatus.BackColor = Color.Green;
-                    await Task.Run(() => objclsBill.GetOrder(lblNoofOrder));
-                }
+					//await Task.Run(() => objclsBill.GetOrder(lblNoofOrder));
+					if (!objclsBill._TransactionIsonProgress)
+					{
+						objclsBill.SetLableText("Processing...", lblNoofOrder);
+						await Task.Run(() => objclsBill.GetOrderAPI(lblNoofOrder));
+					}
+				}
                 else
                 {
                     btnStatus.BackColor = Color.Red;
@@ -117,7 +121,8 @@ namespace KOTPrintUtility.UI
             }
             catch (Exception ex)
             {
-                Loging.Log(LogType.Error, "TmrKOTPrint_Tick error " + ex.Message);
+				btnStatus.BackColor = Color.Red;
+				Loging.Log(LogType.Error, "TmrKOTPrint_Tick error " + ex.Message);
             }
             finally
             {
@@ -129,14 +134,18 @@ namespace KOTPrintUtility.UI
         {
             try
             {
-                cls_ConfigurationMaster objcls = new cls_ConfigurationMaster();
+				objclsBill._TransactionIsonProgress = true;
+				cls_ConfigurationMaster objcls = new cls_ConfigurationMaster();
                 bool Result = objcls.GetConfigurationDetail();
-                if (Result == true)
+				Result = clsUpdateOrder.GetRequestdataAll();
+
+				if (Result == true)
                 {
-                    clsUpdateOrderStatusWebsite objclsStatus = new clsUpdateOrderStatusWebsite();
+					objclsBill._TransactionIsonProgress = false;
+					clsUpdateOrderStatusWebsite objclsStatus = new clsUpdateOrderStatusWebsite();
                     LiveSaleUpdate objSale = new LiveSaleUpdate();
                     lblTimer.Text = Program.DayEnd_BIllingDate + " " + DateTime.Now.ToString("hh:mm:ss tt");
-                    Task.Run(() => objclsStatus.StatrtUploadMaster());
+                    Task.Run(() => objclsStatus.StatrtUploadMSale());
                     Task.Run(() => objSale.StatrtUploadSale());
 
                     Loging.Log(LogType.Information, "Application Started");
@@ -166,10 +175,12 @@ namespace KOTPrintUtility.UI
         {
             try
             {
-                ShowTime();
+				
+				ShowTime();
                 if (TimerIsStopedForLastSixtySecod >= 90)
                 {
-                    TimerIsStopedForLastSixtySecod = 0;
+					objclsBill._TransactionIsonProgress = false;
+					TimerIsStopedForLastSixtySecod = 0;
                     Loging.Log(LogType.Error, "Main Timer is stoped  , try to reboot");
                     ReBootTimer();
                 }

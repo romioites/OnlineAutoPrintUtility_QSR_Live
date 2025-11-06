@@ -199,5 +199,43 @@ namespace KOTPrintUtility.App_Code
 			}
 			return Objcls;
 		}
+
+		
+		public Dictionary<string, string> CommonToAllAPiOnlineStatusUpdate(OrdersUpdateRequest req, string ApiKeyName, string ApiKey, string Uri, string Method)
+		{
+			Dictionary<string, string> returnValue = new Dictionary<string, string>();
+			returnValue = ExecuteAPIGlobal(Uri, req, ApiKeyName, ApiKey, Method);
+			return returnValue;
+		}
+		private Dictionary<string, string> ExecuteAPIGlobal(string Uri, OrdersUpdateRequest res, string ApiKeyName, string ApiKey, string Method)
+		{
+			//sponsePacket oblcls=new ResponsePacket (ResponsePacketResponsePacket)
+			Dictionary<string, string> returnValue = new Dictionary<string, string>();
+			JavaScriptSerializer js = GetZomatoReferenceClass.GetObject_JavaScriptSerializer;
+			string jsonData = js.Serialize(res);
+			Dictionary<string, string> Headers = new Dictionary<string, string>();
+			if (!string.IsNullOrEmpty(ApiKeyName) && !string.IsNullOrEmpty(ApiKey))
+			{
+				Headers.Add(ApiKeyName, ApiKey);
+			}
+			ApiRetrun apiRetrun = _consumeWebApi.PostRequest(Uri, Headers, jsonData, Method);
+
+			if (apiRetrun.Status)
+			{
+				OrdersUpdateResponse Objcls = js.Deserialize<OrdersUpdateResponse>(apiRetrun.JsonString);
+				returnValue["status"] = Objcls.status.ToString();
+				returnValue["error"] = Objcls.message;
+			}
+			else
+			{
+
+				Headers.Add("Accept", "application/json");
+				Headers.Add("ContentType", "application/json");
+				string requestheaderstring = js.Serialize(Headers);
+				returnValue["status"] = "false";
+				returnValue["error"] = apiRetrun.JsonString;
+			}
+			return returnValue;
+		}
 	}
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace KOTPrintUtility.App_Code
@@ -107,5 +108,12 @@ namespace KOTPrintUtility.App_Code
 		string order_status, string IsBillSattle, string weborderCommnet, string RedeemPoints, string lblRedeemPoints, string is_instant_order = "0");
 
 		DataSet GetOrderStatusLog();
+
+
+		Task<Cls_OnlineOrder> GetOnlineOrderFromApiAsync();
+
+		Task<BillRespose> GenerateBill_HDAPI(clsOrdersBill dsBillDetail, string POS_code, string Bill_Type, string Bill_Date, string Bill_Amount, string Dis_Amount, string Service_Charge_Amount, string Paid_Amount, string Balance, string Payment_Mode, string Card_No, string No_of_Item, string To_Whom, string Comments, string Cashier, string tax1, string roundoff, string Discount_by, string TockenNo,
+string Service_Charge, string sur_charge, string Service_Tax, string HoldBill_No, string cardType, string cardAmount, string OutletId, string subTotal, string Bill_DiscountPct, string dept_head, string OrderNo, string Other_Charge, tbl_bill Objbill, string RegisterUserStatus, string SBC_Tax, string KKC_Tax,
+string order_status, string IsBillSattle, string weborderCommnet, string RedeemPoints, string lblRedeemPoints, string is_instant_order = "0");
 	}
 }

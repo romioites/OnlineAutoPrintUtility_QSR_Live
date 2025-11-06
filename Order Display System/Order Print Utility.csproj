@@ -142,6 +142,7 @@
     <Compile Include="App_Code\cls_ActionClass.cs" />
     <Compile Include="App_Code\cls_ConfigurationMaster.cs" />
     <Compile Include="App_Code\Cls_Exception.cs" />
+    <Compile Include="App_Code\Cls_OnlineOrder.cs" />
     <Compile Include="App_Code\cls_PrintBill.cs" />
     <Compile Include="App_Code\cls_PrintKot.cs" />
     <Compile Include="App_Code\cls_SqlConnection.cs" />
@@ -190,6 +191,7 @@
     <Compile Include="App_Code\LPrinter.cs" />
     <Compile Include="App_Code\OrderDetailOnline.cs" />
     <Compile Include="App_Code\OrderStatusUpdateLog.cs" />
+    <Compile Include="App_Code\OrdersUpdateResponse.cs" />
     <Compile Include="App_Code\PackingCharges.cs" />
     <Compile Include="App_Code\PrintOrderAggregator.cs" />
     <Compile Include="App_Code\QSRApp.cs" />

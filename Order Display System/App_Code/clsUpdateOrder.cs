@@ -12,6 +12,11 @@ using System.Threading.Tasks;
 
 namespace KOTPrintUtility.App_Code
 {
+	public class WebhookResponseAPI
+	{
+		public int status_code { get; set; }
+		public ResponseData response { get; set; }
+	}
 	public class ApiRetrun
 	{
 		public bool Status { get; set; }
@@ -38,11 +43,20 @@ namespace KOTPrintUtility.App_Code
 	{
 		public string message { get; set; }
 	}
+	public class ZomatoConfigURL
+	{
+		public string url { get; set; }
+		public string ApiKeyName { get; set; }
+		public string ApiKey { get; set; }
+		public string actionType { get; set; }
+		public string SourceName { get; set; }
+	}
 
 	class clsUpdateOrder
 	{
 		#region Get Request data
-		private static RequestData GetRequestdata(string ActionType)
+		public static List<ZomatoConfigURL> lstURLs = null;
+		public static RequestData GetRequestdata(string ActionType)
 		{
 			RequestData returndata = new RequestData();
 			try
@@ -83,6 +97,52 @@ namespace KOTPrintUtility.App_Code
 			Program.Source_of_order = string.Empty;
 			return returndata;
 		}
+		public static ZomatoConfigURL GetConfigUrl(string ActionType)
+		{
+			var url = lstURLs.FindAll(x => x.actionType == ActionType).FirstOrDefault();
+			return url;
+		}
+		public static bool GetRequestdataAll()
+		{
+			try
+			{
+				lstURLs = new List<ZomatoConfigURL>();
+				string localSqlKey = ConfigurationSettings.AppSettings["sqlKey"].ToString();
+				using (SqlConnection con = new SqlConnection(localSqlKey))
+				{
+					SqlCommand cmd = new SqlCommand();
+					cmd.Connection = con;
+					cmd.Parameters.AddWithValue("@SourceId", "0");
+					cmd.Parameters.AddWithValue("@actionType", "");
+					cmd.CommandText = "dbo.USP_UrlConfig";
+					cmd.CommandType = CommandType.StoredProcedure;
+					SqlDataAdapter da = new SqlDataAdapter(cmd);
+					DataTable dt = new DataTable();
+					da.Fill(dt);
+					if (dt != null && dt.Rows.Count > 0)
+					{
+						for (int i = 0; i < dt.Rows.Count; i++)
+						{
+							var urls = new ZomatoConfigURL();
+							DataRow dr = dt.Rows[i];
+							urls.url = Convert.ToString(dr["url"]);
+							urls.ApiKeyName = Convert.ToString(dr["ApiKeyName"]);
+							urls.ApiKey = Convert.ToString(dr["ApiKey"]);
+							urls.actionType = Convert.ToString(dr["actionType"]);
+							urls.SourceName = Convert.ToString(dr["SourceName"]);
+							lstURLs.Add(urls);
+						}
+						if (lstURLs.Count > 0)
+							return true;
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+
+			}
+			return false;
+		}
 		#endregion
 
 		#region Update Bill Status With Website WebAPI
@@ -90,7 +150,7 @@ namespace KOTPrintUtility.App_Code
 		{
 			bool result = false;
 			try
-			{				
+			{
 				for (int i = 0; i < 3; i++)
 				{
 					RequestData requestData = GetRequestdata("OrderStatusWeb");
@@ -104,7 +164,7 @@ namespace KOTPrintUtility.App_Code
 						{
 							case EnumOrderStatus.Confirm:
 								new_status = "confirm";
-								message = "Order Accept";							
+								message = "Order Accept";
 								break;
 							case EnumOrderStatus.FoodReady:
 								new_status = "Food Ready";
@@ -153,7 +213,7 @@ namespace KOTPrintUtility.App_Code
 							}
 						}
 					}
-				}				
+				}
 			}
 			catch (Exception x)
 			{
@@ -237,10 +297,10 @@ namespace KOTPrintUtility.App_Code
 						if (UpdateLOcalDB)
 						{
 							UpdateOrderStatusOffline("3", LastBillNo, bill_no_WebOrder, status, "0", "1", "");
-						}						
+						}
 					}
-					if(Result)
-					  break;
+					if (Result)
+						break;
 				}
 			}
 			catch (Exception ex)
@@ -260,14 +320,14 @@ namespace KOTPrintUtility.App_Code
 				{
 					RequestData requestData = GetRequestdata("UploadGuestfamepilot");
 					if (requestData.SourceName.ToLower().Equals("urban piper"))
-					{				
+					{
 
 						bool respounceStatus = true;
 						Dictionary<string, string> returnValue = null;
 						if (requestData.Status)
 						{
 							respounceStatus = false;
-							returnValue = GetZomatoReferenceClass.GetObject_ZomatoAPi.CommonToAllAPiUploadSale(cust, requestData.ApiKeyName,requestData.ApiKey, requestData.Uri, "POST");
+							returnValue = GetZomatoReferenceClass.GetObject_ZomatoAPi.CommonToAllAPiUploadSale(cust, requestData.ApiKeyName, requestData.ApiKey, requestData.Uri, "POST");
 							respounceStatus = returnValue["status"].Equals("True");
 							try
 							{
@@ -282,7 +342,7 @@ namespace KOTPrintUtility.App_Code
 								break;
 							}
 						}
-					}			
+					}
 				}
 			}
 			catch (Exception x)
@@ -290,6 +350,69 @@ namespace KOTPrintUtility.App_Code
 
 			}
 			return result;
-		}		
+		}
+
+		public static async Task<bool> UpdatOrderStatusOnlineCloudDBAPI(string bill_no_WebOrder, string LastBillNo, string status, string Channel = "website", bool UpdateLOcalDB = false)
+		{
+			bool Result = false;
+			try
+			{
+				for (int i = 0; i < 3; i++)
+				{
+					OrderDetailOnline objOnline = new OrderDetailOnline();
+					Result = CallAPI(new OrdersUpdateRequest { bill_no_local = LastBillNo, bill_no_WebOrder = bill_no_WebOrder, status = status,sql_Key=Program.sqlKeyOnline });
+					if (Result && Channel.ToLower() == "website")
+					{
+						OrderStatusUpdateLog.AddStatusList(new clsOrderListStatus { Bill_no = LastBillNo, API_Status = false, CloudDB_Status = true, OnlineBillNo_no = bill_no_WebOrder, Ststus = status }, EnumStatusType.CloudDBStatus);
+
+						if (UpdateLOcalDB)
+						{
+							UpdateOrderStatusOffline("3", LastBillNo, bill_no_WebOrder, status, "0", "1", "");
+						}
+					}
+					if (Result)
+						break;
+				}
+			}
+			catch (Exception ex)
+			{
+				Loging.Log(LogType.Error, "UpdatOrderStatusOnline.fail error ocurred  bill_no_WebOrder no=> " + bill_no_WebOrder + " error " + ex.Message);
+			}
+			return Result;
+		}
+		public static bool CallAPI(OrdersUpdateRequest req)
+		{
+			bool result = false;
+			try
+			{
+				for (int i = 0; i < 3; i++)
+				{
+					var conf = clsUpdateOrder.GetConfigUrl("OrderStatusCloud");
+					if (conf.url != "")
+					{
+						bool respounceStatus = true;
+						Dictionary<string, string> returnValue = null;
+						respounceStatus = false;
+						returnValue = GetZomatoReferenceClass.GetObject_ZomatoAPi.CommonToAllAPiOnlineStatusUpdate(req, "", conf.ApiKey, conf.url, "POST");
+						respounceStatus = returnValue["status"].Equals("True");
+						try
+						{
+							Loging.Log(LogType.Information, "Update order Status " + returnValue["error"].ToString()+" "+ req.bill_no_WebOrder);
+						}
+						catch { }
+						if (respounceStatus)
+						{
+							result = true;
+							break;
+						}
+					}
+				}
+			}
+			catch (Exception x)
+			{
+
+			}
+			return result;
+		}
 	}
 }

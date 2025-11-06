@@ -15,7 +15,7 @@ namespace KOTPrintUtility.App_Code
 {
 	public class QSRApp
 	{
-		
+		public bool _TransactionIsonProgress = false;
 		clsPrintKOT objKOT = null;
 		ADOC objADOC = null;
 		static DataTable dt_tblTemp_id = null;
@@ -580,22 +580,351 @@ namespace KOTPrintUtility.App_Code
 			Ping p = new Ping();
 			try
 			{
-				if (Validate_IP.Length > 0)
-				{
-					PingReply reply = p.Send(Validate_IP, 3000);
-					if (reply.Status == IPStatus.Success)
-						IsRunning = true;
-				}
-				else
-				{
+				//if (Validate_IP.Length > 0)
+				//{
+				//	PingReply reply = p.Send(Validate_IP, 3000);
+				//	if (reply.Status == IPStatus.Success)
+				//		IsRunning = true;
+				//}
+				//else
+				//{
 					IsRunning = true;
-				}
+				//}
 			}
 			catch
 			{
 				IsRunning = false;
 			}
 			return IsRunning;
+		}
+		/// <summary>
+		/// GetOrderAPI
+		/// </summary>
+		/// <param name="lblNoofOrder"></param>
+		public async void GetOrderAPI(Label lblNoofOrder)
+		{
+			try
+			{
+				_TransactionIsonProgress = true;
+				int count = 0;				
+				var dtOrder = await objcls.GetOnlineOrderFromApiAsync();
+				if (dtOrder != null && dtOrder.status)
+				{
+					//var dtOrder = ds.Tables[1];
+					SetLableText("No of order in queue=> " + dtOrder.bill.Count.ToString(), lblNoofOrder);
+					Loging.Log(LogType.Information, "QSRApp.GetOrder: no of order=>  " + dtOrder.bill.Count.ToString());
+					foreach (var dr in dtOrder.bill)
+					{
+						#region customer info
+						count++;
+						string bill_no = dr.customers.Bill_no_fk.ToString();
+						string bill_no_TabOrder = dr.customers.Bill_no_fk.ToString();
+						string Cust_MobileNo = dr.customers.Mobile_no.Replace("+", "").Trim();
+						string Cust_Name = dr.customers.Cust_Name;
+						string Address = dr.customers.Address;
+						string City = dr.customers.City;
+						string email_id = dr.customers.email_id.ToString().Replace("'", "");
+						string Location_Id = dr.customers.Location_Id;
+						string UserName = dr.customers.UserName;
+						string currentStatus = dr.customers.currentStatus;
+						string Comments = dr.customers.Comments.Replace("\r", " ").Trim();
+						Program.Source_of_order = dr.customers.Order_Source_Id;
+						string Payment_Mode = dr.customers.Payment_Mode;
+						string OrderSouce = dr.customers.OrderSouce;
+						string Land_mark = dr.customers.Land_mark;
+						string Location = dr.customers.Location;
+						string Flat_No = dr.customers.Flat_No;
+						string pin_no = dr.customers.pin_no;
+						string Longitude = dr.customers.Longitude;
+						string Company_Stateid = Program.Company_Stateid;
+						string Latitude = dr.customers.Latitude;
+						string OnlinePaymentMode = (Payment_Mode.Trim().Equals("1") ? "CASH" : "CARD");
+						Program.ZomatoOrderNo = dr.customers.Zomato_order_id;
+						string ZomatoOrderNo = dr.customers.Zomato_order_id;
+						string External_Source_id = dr.customers.External_Source_id;
+						string Channel_Id = dr.customers.External_Source_id;
+
+						string sqlqLocal = "usp_insert_Update_customer @Name='" + Cust_Name.Replace("'", " ") + "',@DOB='',@Address='" + Address.Replace("'", " ") +
+								  "',@Mobile_No='" + Cust_MobileNo + "',@Phone_No='" + Cust_MobileNo + "',@City='" + City.Replace("'", "") + "',@created_by='" + "Utility" +
+								  "',@Email_id='" + email_id + "',@Location='" + Location.Replace("'", " ") + "',@Isflag='0',@Remarks='',@location_id='" + Location_Id + "',@Colony_id='" + "1" + "'";
+
+						string cudt_codes = objADOC.GetObject.GetSingleResult(sqlqLocal);
+						Program.Cust_code = cudt_codes;
+
+						if (Program.Cust_code != "" && Program.Cust_code != "0")
+						{
+							GetBillDetailAsyncAPI(bill_no, Cust_Name, Cust_MobileNo, ZomatoOrderNo, cudt_codes, dr);
+						}
+						SetLableText("No of order in queue=> " + dtOrder.bill.Count.ToString() + " printed=> " + count.ToString(), lblNoofOrder);
+						#endregion
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				_TransactionIsonProgress = false;
+				Loging.Log(LogType.Error, "GetOrder error " + ex.Message);
+			}
+			finally
+			{
+				_TransactionIsonProgress = false;
+			}
+		}
+
+		private async Task GetBillDetailAsyncAPI(string Bill_No, string CustName, string custMobileNo, string ZomatoOrderNo, string Cust_code, clsOrdersBill dsBillDetail)
+		{
+			tbl_bill objBill = null;
+			string Bill_TypeName_Test = string.Empty;
+			try
+			{
+				dt_tblTemp_id = new DataTable();
+				if (dsBillDetail != null && dsBillDetail.items.Count > 0)
+				{
+					Loging.Log(LogType.Information, "QSRApp.GetBillDetailAsync no of item=>  " + dsBillDetail.items.Count.ToString() + " ZomatoOrderNo " + ZomatoOrderNo);
+					string payment_mode = dsBillDetail.payment_mode;
+					objBill = new tbl_bill();
+					objBill.bill_no_WebOrder = Bill_No;
+					objBill.custCode = Cust_code;
+					Bill_TypeName_Test = dsBillDetail.Type;
+					objBill.Bill_TypeName = dsBillDetail.bill_Type;
+					Program.BillType = objBill.Bill_TypeName;
+					objBill.ModifiedBill_No = dsBillDetail.bill_no.ToString();
+					objBill.ModifiedAmount = dsBillDetail.bill_amount.ToString();
+					objBill.DiscountModifiedBy = dsBillDetail.Discount_by;
+					objBill.Modified_DiscountAmnt = dsBillDetail.dis_amount.ToString();
+					objBill.Modified_DiscountPct = dsBillDetail.Bill_DiscountPct.ToString();
+					objBill.Remarks = dsBillDetail.Comments.ToString();
+					objBill.Delivery_Charge = dsBillDetail.Delivery_Charge.ToString();
+
+					objBill.Channel = dsBillDetail.bill_punch_by;
+					objBill.Channel_Id = dsBillDetail.External_Source_id;
+					objBill.Delivery_By = dsBillDetail.DeliveryBy;
+					objBill.Aggr_dis_pct = dsBillDetail.dis_pct_Agg.ToString();
+					objBill.Aggr_dis_amount = dsBillDetail.Aggr_Discount.ToString();
+					objBill.Agg_Tax_Calculation = dsBillDetail.Agg_Tax_Calculation;
+					objBill.dis_Type = dsBillDetail.dis_type;
+					objBill.ZomatoOrderNo = ZomatoOrderNo;
+					objBill.CardType = dsBillDetail.Online_Payment_Mode;
+					objBill.is_instant_order = dsBillDetail.is_instant_order.ToString();
+					objBill.Card_Type_Settlement = Convert.ToString(dsBillDetail.Card_Type_Settlement);
+					
+
+					string BType = objBill.Bill_TypeName;
+					if (BType.Trim() == "")
+					{
+						BType = objcls.GetBillType(Bill_No);
+					}
+					//Program.OnlineOrderNo = Bill_No;
+					//DataTable dtTran = dsBillDetail.Tables[1];
+					//AssortedItem.CancelAssortedItem();
+					//clsDeal.GetMathod.CancelDealItem();
+					//clsItems.GetMathod.CancelItem();
+					//OrderDetailOnline.GenerateUniqIndex("", 1, dt_tblTemp_id);
+					//DataTable dtAssortedItem = dsBillDetail.Tables[2];
+					//DataTable dtCharges = dsBillDetail.Tables[3];
+					if (dsBillDetail.charges != null)
+					{
+						foreach (var dr in dsBillDetail.charges)
+						{
+							DataRow drNew = PackingCharges.GetPackaingCharges.NewRow();
+							drNew["Zomato_order_id"] = dr.Zomato_order_id;
+							drNew["Charge_name"] = dr.Charge_name;
+							drNew["chargesValue"] = dr.chargesValue;
+							drNew["chargesTotaltax"] = dr.chargesTotaltax;
+							drNew["I_Code_fk"] = dr.I_Code_fk;
+							drNew["chargesId"] = dr.chargesId;
+							PackingCharges.AddCharges(drNew);
+						}
+					}
+
+					if (dsBillDetail.items.Count > 0)
+					{
+						//Program.Discount_Pct = "0";
+						List<tbl_tran> objlst = new List<tbl_tran>();
+						for (int i = 0; i < dsBillDetail.items.Count; i++)
+						{
+							tbl_tran trn = new tbl_tran();
+							trn.Assorted_Item = dsBillDetail.items[i].I_code;
+							trn.qty = dsBillDetail.items[i].qty.ToString();
+							trn.Rate = dsBillDetail.items[i].Rate.ToString();
+							trn.I_Name = dsBillDetail.items[i].i_name;
+							trn.TaxRate = dsBillDetail.items[i].TaxRate.ToString();
+							trn.IsTaxable = dsBillDetail.items[i].IsTaxable.ToString();
+							trn.tax = Convert.ToString(dsBillDetail.items[i].Tax.ToString());
+							trn.Discount = dsBillDetail.items[i].Discount;
+							trn.dept = dsBillDetail.items[i].dept;
+							trn.Group_Dish = dsBillDetail.items[i].Group_Dish;
+							trn.service_tax = dsBillDetail.items[i].service_tax;
+							trn.dis_rate = dsBillDetail.items[i].dis_rate.ToString();
+							trn.dis_amount = dsBillDetail.items[i].dis_amount.ToString();
+							//clsDeal.GetVariable.Deal_Item = trn.Assorted_Item;
+							//clsDeal.GetVariable.Deal_ItemIndex = trn.Group_Dish;
+
+							trn.amount = Convert.ToDouble(dsBillDetail.items[i].amout.ToString());
+							//dgvItemDetails.Rows.Add(trn.I_Name.Trim(), trn.Rate, trn.qty, Amount.ToString("N2"), tax, dtTran.Rows[i]["I_code"].ToString(), dtTran.Rows[i]["Comments"].ToString(), "0", "0", TaxRate, IsTaxable, Discount, Group_Dish, dept, "0", service_tax, "0", dis_rate, dis_amount, "0", "0", "0", "0", "");
+							//double TotalRate = 0;
+							//if (dtAssortedItem.Rows.Count > 0)
+							//{
+							try
+							{
+								if (trn.dis_amount != "" && trn.dis_amount != "0")
+								{
+									if (Convert.ToDouble(trn.dis_amount) > Convert.ToDouble(trn.amount))
+									{
+										trn.dis_amount = trn.amount.ToString();
+										trn.dis_rate = (Convert.ToDouble(trn.dis_amount) / trn.amount * 100).ToString("N4");
+									}
+								}
+							}
+							catch { }
+
+							objlst.Add(trn);
+						}
+						objBill.tran = objlst;
+						//DataTable dtdeal = GetdealNAssorted_item();
+						string SubTotal = string.Empty;
+						string NetTotal = string.Empty;
+						string TotalVAT = string.Empty;
+						string ServiceTax = string.Empty;
+						string Surcharge = string.Empty;
+						string DeliveryCharge = string.Empty;
+						string BillTotal = string.Empty;
+						string GrandTotal = string.Empty;
+						string Discount_Amount = "0";
+						string sbc = "0";
+						string kkc = "0";
+						clsCalculateBill.CalculateBillDetailQSR(objlst, out SubTotal, out NetTotal, out ServiceTax, out TotalVAT, out BillTotal, out GrandTotal,
+							out Surcharge, out DeliveryCharge, Convert.ToDecimal(objBill.Modified_DiscountPct), "1", out Discount_Amount, out sbc, out kkc, objBill.Bill_TypeName, objBill.Delivery_Charge);
+
+						if (Discount_Amount != "" && Discount_Amount != "0")
+						{
+							if (Convert.ToDouble(Discount_Amount) > Convert.ToDouble(GrandTotal))
+							{
+								objBill.Modified_DiscountAmnt = SubTotal;
+							}
+						}
+						double tamt = double.Parse(NetTotal.Replace(",", "").Trim()) + double.Parse(TotalVAT.Replace(",", "").Trim()) + Convert.ToDouble(DeliveryCharge.Replace(",", "").Trim());
+
+						double TotalAmount = Math.Round(tamt);
+						double ReplaceAmount = TotalAmount - tamt;          //Round off amount
+						string srBillNo = string.Empty;
+						string is_instant_order = "0";
+						if (objBill.is_instant_order.Length > 0)
+						{
+							is_instant_order = objBill.is_instant_order;
+						}
+						if (objBill.Channel.ToLower() == "website")
+						{
+							DataGridView ObjDgvPayment = new DataGridView();
+							clsTempData.SetDataGrid(ObjDgvPayment);
+						}
+						if (BType.ToUpper() != "C" && objBill.Channel.ToLower() != "website")
+						{
+							if (objBill.Card_Type_Settlement.Length > 1)
+							{
+								bool IsAdded = AddPayment_Mode(payment_mode, payment_mode, objBill.Card_Type_Settlement, "", GrandTotal.Replace(",", "").Trim());
+							}
+						}
+						try
+						{
+							Loging.Log(LogType.Information, "QSRApp.GenerateBill_HD.start bill generation json " + JsonConvert.SerializeObject(objBill));
+						}
+						catch { }
+						BillRespose res = new BillRespose();
+
+						res = await objcls.GenerateBill_HDAPI(dsBillDetail,"U", BType, Program.DayEnd_BIllingDate, GrandTotal, Discount_Amount, "0", "0", "0", payment_mode, "", objBill.tran.Count.ToString(), "", objBill.Remarks, "admin", TotalVAT, ReplaceAmount.ToString("N2"),
+							  objBill.Channel, "0", "0", "0", "0", "", "", "0", Program.Outlet_id, NetTotal, objBill.Modified_DiscountPct, "0", "0", DeliveryCharge, objBill,"0", "0", "0", "0", "0", objBill.Remarks, "0", "0", objBill.is_instant_order);
+						Loging.Log(LogType.Information, "QSRApp.GenerateBill_HD.end Result " + res.Result.ToString());
+						if (res.Result == true)
+						{
+							srBillNo = res.Bill_no;
+							if (objBill.Channel.ToLower() == "website")
+							{
+								clsUpdateOrder.UpdateBillStatusWithWebsiteWebAPI(ZomatoOrderNo.Replace("-", "").Trim().TrimEnd('-'), srBillNo, objBill.bill_no_WebOrder, EnumOrderStatus.Confirm);
+							}
+							string TockenNo = string.Empty;
+							string OrderComment = string.Empty;
+							string Print_No_of_HD_Bill = clsConfigSettings.Print_No_of_HD_Bill.ToString();
+							//if (objBill.Bill_TypeName != "C")
+							string PrintCap = clsConfigSettings.Print_Cap.ToString();
+
+
+							//if (is_instant_order == "1")
+							//{
+
+							//	objClsPrintBill.PrintBillHomeDelivery(srBillNo, Program.Cust_code, Convert.ToInt32(Print_No_of_HD_Bill), clsConfigSettings.fin_year, out TockenNo, BType);
+							//}
+							//else
+							//{
+							Loging.Log(LogType.Information, "QSRApp.PrintBillHomeDelivery_CrystalAsync.start bill printing bill no=> " + srBillNo);
+							if (PrintCap == "0")
+							{
+								ClsPrintBill.PrintBill_HD_TexFormat_new(srBillNo, "", "", "", out TockenNo, out OrderComment, clsConfigSettings.fin_year, Bill_TypeName_Test);
+							}
+							//Added by Yachna for New BillPrint
+							else if (PrintCap == "2")
+							{
+								objClsPrintBill.PrintBillHomeDelivery_AssortedQty(srBillNo, Program.Cust_code, Convert.ToInt32(Print_No_of_HD_Bill), clsConfigSettings.fin_year, token => { TockenNo = token; }, BType, is_instant_order);
+							}
+							else
+							{
+								objClsPrintBill.PrintBillHomeDelivery_CrystalAsync(srBillNo, Program.Cust_code, Convert.ToInt32(Print_No_of_HD_Bill), clsConfigSettings.fin_year, token => { TockenNo = token; }, BType, is_instant_order);
+							}
+							//}
+							Loging.Log(LogType.Information, "QSRApp.PrintBillHomeDelivery_CrystalAsync.end bill printing  bill no=> " + srBillNo);
+							//else
+							//	ClsPrintBill.PrintBill_TDT_TexFormat_New(srBillNo, "", "", "", out TockenNo, out OrderComment, clsConfigSettings.fin_year, Bill_TypeName_Test);
+
+							int NoofPrint_Kot = Convert.ToInt32(clsConfigSettings.NoofPrint_KOT_TA);
+							if (objBill.Bill_TypeName == "H")
+								NoofPrint_Kot = Convert.ToInt32(clsConfigSettings.NoofPrint_KOT_HD);
+							else if (objBill.Bill_TypeName == "D")
+								NoofPrint_Kot = Convert.ToInt32(clsConfigSettings.NoofPrint_KOT_DN);
+
+							string SingleKOT = clsConfigSettings.SingleKOT;
+
+							if (clsConfigSettings.PrintRemarksOnKot != "1")
+								OrderComment = "";
+
+							Loging.Log(LogType.Information, "QSRApp start kot print no of kot " + NoofPrint_Kot + "  bill no=> " + srBillNo);
+
+							if (SingleKOT != "1")
+							{
+								if (NoofPrint_Kot > 0)
+								{
+									if (clsConfigSettings.isKOT_3or4_EnchPrint == "1")
+										objKOT.PrintKOTBigFontBigSize(NoofPrint_Kot, custMobileNo.Trim(), CustName.Trim(), srBillNo, objlst, TockenNo, OrderComment);
+									if (clsConfigSettings.isKOT_3or4_EnchPrint == "2")
+										objKOT.PrintKOTSmallFontSmallSize("1", TockenNo, NoofPrint_Kot, custMobileNo, CustName, srBillNo, OrderComment, is_instant_order);
+									else
+										objKOT.PrintKOTSmallFontSmallSize("1", TockenNo, NoofPrint_Kot, custMobileNo, CustName, srBillNo, OrderComment, is_instant_order);
+									Loging.Log(LogType.Information, "QSRApp end kot print  bill no=> " + srBillNo);
+								}
+							}
+							else
+							{
+								//Added by Yachna for Single Item Single qty Single KOT 
+								objKOT.PrintKOTSmallFontSmallSize_SeperateKot_WithoutHeaders("1", TockenNo, NoofPrint_Kot, custMobileNo, CustName, srBillNo, OrderComment);
+							}
+							Loging.Log(LogType.Information, "============================================================================================================");
+
+						}
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				Loging.Log(LogType.Error, "GetBillDetailAsync  error " + ex.Message + " online bill_no " + Bill_No);
+			}
+			finally
+			{
+				objBill = new tbl_bill();
+				dt_tblTemp_id = new DataTable();
+				dt_tblTemp_id.Rows.Clear();
+				AssortedItem.CancelAssortedItem();
+				clsDeal.GetMathod.CancelDealItem();
+				clsItems.GetMathod.CancelItem();
+			}
 		}
 	}
 }
