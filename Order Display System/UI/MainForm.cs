@@ -145,7 +145,7 @@ namespace KOTPrintUtility.UI
 					clsUpdateOrderStatusWebsite objclsStatus = new clsUpdateOrderStatusWebsite();
                     LiveSaleUpdate objSale = new LiveSaleUpdate();
                     lblTimer.Text = Program.DayEnd_BIllingDate + " " + DateTime.Now.ToString("hh:mm:ss tt");
-                    Task.Run(() => objclsStatus.StatrtUploadMSale());
+                    Task.Run(() => objclsStatus.StatrtUploadStatus());
                     Task.Run(() => objSale.StatrtUploadSale());
 
                     Loging.Log(LogType.Information, "Application Started");

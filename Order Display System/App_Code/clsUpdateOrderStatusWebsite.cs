@@ -13,7 +13,7 @@ namespace KOTPrintUtility.App_Code
 	{
 		private Timer tmrStarttmr;		
 
-		public async Task StatrtUploadMSale()
+		public async Task StatrtUploadStatus()
 		{
 			// Initialize the timer
 			tmrStarttmr = new Timer(30000); // 15 sec
