@@ -1030,6 +1030,7 @@ namespace KOTPrintUtility.App_Code
 						sql_key=Program.sqlKeyOnline
 					};
 					var json = JsonConvert.SerializeObject(models);
+					//Loging.Log(LogType.Information, "order request json: " + json);
 					var content = new StringContent(json, Encoding.UTF8, "application/json");
 
 					var response = await client.PostAsync(apiUrl, content);
@@ -1037,6 +1038,8 @@ namespace KOTPrintUtility.App_Code
 					response.EnsureSuccessStatusCode();
 
 					string responseContent = await response.Content.ReadAsStringAsync();
+					Loging.Log(LogType.Information, "order response json: " + responseContent);
+
 					order = JsonConvert.DeserializeObject<Cls_OnlineOrder>(responseContent);
 					//using (HttpClient client = new HttpClient())
 					//{
@@ -1074,6 +1077,7 @@ namespace KOTPrintUtility.App_Code
 			}
 			catch (Exception ex)
 			{
+				Loging.Log(LogType.Information, "QSRApp.GetOrder: error " + ex.Message);
 				Console.WriteLine("API Error: " + ex.Message);
 			}
 			return order;
