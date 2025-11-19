@@ -98,6 +98,7 @@ namespace KOTPrintUtility.App_Code
 			Dictionary<string, string> returnValue = new Dictionary<string, string>();
 			JavaScriptSerializer js = GetZomatoReferenceClass.GetObject_JavaScriptSerializer;
 			string jsonData = js.Serialize(postData);
+			Loging.Log(LogType.Information, "cls_ZomatoAPi.ExecuteAPI: " + jsonData);
 			Dictionary<string, string> Headers = new Dictionary<string, string>();
 			if (!string.IsNullOrEmpty(ApiKeyName) && !string.IsNullOrEmpty(ApiKey))
 			{

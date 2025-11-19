@@ -215,3 +215,4 @@ D:\Application\ROMIO\OnlineAutoPrintUtility_QSR_Live\Order Display System\obj\De
 D:\Application\ROMIO\OnlineAutoPrintUtility_QSR_Live\Order Display System\obj\Debug\Order Print Utility.csproj.CopyComplete
 D:\Application\ROMIO\OnlineAutoPrintUtility_QSR_Live\Order Display System\obj\Debug\OrderPrintUtility.exe
 D:\Application\ROMIO\OnlineAutoPrintUtility_QSR_Live\Order Display System\obj\Debug\OrderPrintUtility.pdb
+D:\Application\ROMIO\OnlineAutoPrintUtility_QSR_Live\Order Display System\obj\Debug\Order Print Utility.csprojAssemblyReference.cache

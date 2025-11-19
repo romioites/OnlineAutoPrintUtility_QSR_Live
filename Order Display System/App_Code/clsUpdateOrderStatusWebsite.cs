@@ -57,6 +57,7 @@ namespace KOTPrintUtility.App_Code
 					adp.Fill(ds);
 					if (ds.Tables.Count > 0)
 					{
+						Loging.Log(LogType.Information, "UpdateStatusAPI(): " + ds.Tables.Count.ToString());
 						if (ds.Tables[0].Rows.Count > 0)
 						{
 							for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
@@ -74,6 +75,7 @@ namespace KOTPrintUtility.App_Code
 								{
 									case EnumOrderStatus.Confirm:
 										{
+											Loging.Log(LogType.Information, "UpdateStatusAPI.EnumOrderStatus.Confirm: " + zomato_order_id);
 											if (Status_Website_api == "0")
 											{
 												if (!OrderStatusUpdateLog.FindOrderStatus(EnumOrderStatus.Confirm, EnumStatusType.APIStatus, bill_no))
@@ -87,6 +89,7 @@ namespace KOTPrintUtility.App_Code
 										break;
 									case EnumOrderStatus.FoodReady:
 										{
+											Loging.Log(LogType.Information, "UpdateStatusAPI.EnumOrderStatus.FoodReady: " + zomato_order_id);
 											if (Status_Website_api == "0")
 											{
 												if (!OrderStatusUpdateLog.FindOrderStatus(EnumOrderStatus.FoodReady, EnumStatusType.APIStatus, bill_no))
@@ -101,6 +104,7 @@ namespace KOTPrintUtility.App_Code
 										break;
 									case EnumOrderStatus.OrdderAssin:
 										{
+											Loging.Log(LogType.Information, "UpdateStatusAPI.EnumOrderStatus.OrdderAssin: " + zomato_order_id);
 											if (Status_Website_api == "0")
 											{
 												if (!OrderStatusUpdateLog.FindOrderStatus(EnumOrderStatus.OrdderAssin, EnumStatusType.APIStatus, bill_no))
@@ -114,6 +118,7 @@ namespace KOTPrintUtility.App_Code
 										break;
 									case EnumOrderStatus.Cancel:
 										{
+											Loging.Log(LogType.Information, "UpdateStatusAPI.EnumOrderStatus.Cancel: " + zomato_order_id);
 											if (Status_Website_api == "0")
 											{
 												if (!OrderStatusUpdateLog.FindOrderStatus(EnumOrderStatus.Cancel, EnumStatusType.APIStatus, bill_no))
@@ -127,6 +132,7 @@ namespace KOTPrintUtility.App_Code
 										break;
 									case EnumOrderStatus.CustomerDataSent:
 										{
+											Loging.Log(LogType.Information, "UpdateStatusAPI.EnumOrderStatus.CustomerDataSent: " + zomato_order_id);
 											string sql = "";
 											RootCustomerData cust = new RootCustomerData();
 											cust.Data = new List<CustomerData>();

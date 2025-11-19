@@ -45,12 +45,14 @@ namespace KOTPrintUtility.App_Code
 						apiRetrun.Status = true;
 						apiRetrun.authentication = true;
 						apiRetrun.JsonString = ResponceResult;
+						Loging.Log(LogType.Information, "cls_ZomatoAPi.PostRequest.response: " + jsonData);
 					}
 				}
 				return apiRetrun;
 			}
 			catch (Exception ex)
 			{
+				Loging.Log(LogType.Error, "cls_ZomatoAPi.PostRequest: " + ex.Message);
 				apiRetrun.Status = false;
 				apiRetrun.JsonString = ex.Message;
 				return apiRetrun;
