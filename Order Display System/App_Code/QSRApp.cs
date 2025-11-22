@@ -682,6 +682,7 @@ namespace KOTPrintUtility.App_Code
 				{
 					Loging.Log(LogType.Information, "QSRApp.GetBillDetailAsync no of item=>  " + dsBillDetail.items.Count.ToString() + " ZomatoOrderNo " + ZomatoOrderNo);
 					string payment_mode = dsBillDetail.payment_mode;
+					dsBillDetail.Card_Type_Settlement=dsBillDetail.Card_Type_Settlement == null ? "":dsBillDetail.Card_Type_Settlement;
 					objBill = new tbl_bill();
 					objBill.bill_no_WebOrder = Bill_No;
 					objBill.custCode = Cust_code;

@@ -111,7 +111,7 @@ namespace KOTPrintUtility.UI
 					if (!objclsBill._TransactionIsonProgress)
 					{
 						objclsBill.SetLableText("Processing...", lblNoofOrder);
-						//await Task.Run(() => objclsBill.GetOrderAPI(lblNoofOrder));
+						await Task.Run(() => objclsBill.GetOrderAPI(lblNoofOrder));
 					}
 				}
                 else
@@ -145,7 +145,7 @@ namespace KOTPrintUtility.UI
 					clsUpdateOrderStatusWebsite objclsStatus = new clsUpdateOrderStatusWebsite();
                     LiveSaleUpdate objSale = new LiveSaleUpdate();
                     lblTimer.Text = Program.DayEnd_BIllingDate + " " + DateTime.Now.ToString("hh:mm:ss tt");
-					Task.Run(() => objclsStatus.StatrtUploadStatus());
+					//Task.Run(() => objclsStatus.StatrtUploadStatus());
 					//Task.Run(() => objSale.StatrtUploadSale());
 
 					Loging.Log(LogType.Information, "Application Started");

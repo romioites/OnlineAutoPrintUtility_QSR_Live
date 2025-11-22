@@ -24,15 +24,21 @@ values(@bill_no,@fin_year,@Status_Website_api,@Status_Cloud_DB,@online_bill_no,@
 end  
 else if(@mode=1)  
 begin  
---select id,bill_no,fin_year,isnull(Status_Website_api,0) as Status_Website_api,online_bill_no,  
---isnull(Status_Cloud_DB,0) as Status_Cloud_DB,Current_Status,zomato_order_id from  
---tbl_order_status_update with(nolock) where convert(varchar(10),bill_date,120)=@bill_date  
---and ( isnull(Status_Cloud_DB,0)=0 or isnull(Status_Website_api,0)=0 )  order by id   
+
   
-select *from View_ListOfPndingStatus where convert(varchar(10),bill_date,120)=@bill_date  
+  select top 5 b.id,a.bill_no,a.fin_year,isnull(a.is_api_sync,0) as Status_Website_api,0 as'online_bill_no','1' as Status_Cloud_DB, 'CustomerDataSent' as 'Current_Status',  
+  
+  
+'' zomato_order_id,a.bill_date,0 as RetryCount  
+from TBL_CustomerInfo b   
+inner join tbl_Bill a with(nolock) on b.id=a.cust_code where convert(varchar(10),a.bill_date,120)=@bill_date  
+and isnull(a.is_api_sync,0)=0 and   a.Channel not in('swiggy','zomato')  
+--order by id
+union all 
+select top 5 *from View_ListOfPndingStatus where convert(varchar(10),bill_date,120)=@bill_date  
 and ( isnull(Status_Cloud_DB,0)=0 or isnull(Status_Website_api,0)=0 )  
 and RetryCount<=4  
-  
+  order by id
 --union all  
 --select b.id,a.bill_no,a.fin_year,isnull(a.is_api_sync,0) as Status_Website_api,0 as'online_bill_no','1' as Status_Cloud_DB, 'CustomerDataSent' as 'Current_Status',  
   
