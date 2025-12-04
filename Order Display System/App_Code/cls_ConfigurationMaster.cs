@@ -256,7 +256,7 @@ namespace KOTPrintUtility.App_Code
                         {
                             clsConfigSettings.Print_No_of_HD_Bill = "0";
                         }
-                        if (clsConfigSettings.is_Print_HD_KOT == "1")
+                        if (clsConfigSettings.is_Print_HD_KOT == "0")
                         {
                             clsConfigSettings.NoofPrint_KOT_TA = "0";
                             clsConfigSettings.NoofPrint_KOT_HD = "0";

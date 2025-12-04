@@ -107,7 +107,7 @@ namespace KOTPrintUtility.UI
                 {                    
                     if (btnStatus.BackColor == Color.Red)
                         btnStatus.BackColor = Color.Green;
-					//////////////await Task.Run(() => objclsBill.GetOrder(lblNoofOrder));
+			
 					if (!objclsBill._TransactionIsonProgress)
 					{
 						objclsBill.SetLableText("Processing...", lblNoofOrder);
