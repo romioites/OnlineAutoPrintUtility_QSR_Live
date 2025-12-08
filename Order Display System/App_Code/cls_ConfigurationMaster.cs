@@ -39,6 +39,7 @@ namespace KOTPrintUtility.App_Code
         }
         public bool GetConfigurationDetail()
         {
+			Loging.Log(LogType.Information, "GetConfigurationDetail.start");
             bool Result = false;
             ////-----------Start Header--------------------//////////
             DataTable dtheader = new DataTable();
@@ -269,14 +270,16 @@ namespace KOTPrintUtility.App_Code
                         Result = true;
                     }
 
-                    #endregion
-                }
+					#endregion
+					Loging.Log(LogType.Information, "GetConfigurationDetail.complete");
+				}
             }
             catch (Exception ex)
             {
-                //System.Diagnostics.StackTrace trace = new System.Diagnostics.StackTrace(ex, true); Cls_Exception.InsertException("1", Program.Bill_Date, Program.UserName, ex.Message, trace.GetFrame(0).GetFileLineNumber().ToString(), new System.Diagnostics.StackTrace().GetFrame(0).GetMethod().Name, "cls_ConfigurationMaster.cs");
-                //MessageBox.Show(ex.Message);
-            }
+				Loging.Log(LogType.Error, "GetConfigurationDetail.start");
+				//System.Diagnostics.StackTrace trace = new System.Diagnostics.StackTrace(ex, true); Cls_Exception.InsertException("1", Program.Bill_Date, Program.UserName, ex.Message, trace.GetFrame(0).GetFileLineNumber().ToString(), new System.Diagnostics.StackTrace().GetFrame(0).GetMethod().Name, "cls_ConfigurationMaster.cs");
+				//MessageBox.Show(ex.Message);
+			}
             finally
             {
                 dtConfigFile.Dispose();
