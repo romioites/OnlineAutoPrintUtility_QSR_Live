@@ -35,7 +35,8 @@ namespace KOTPrintUtility
         public static string Footer1 = string.Empty;
         public static string Footer2 = string.Empty;
         public static string Footer3 = string.Empty;
-        public static string sqlKeyOnline = string.Empty;
+        public static string sqlKeyOnline = string.Empty; public static string sqlkey_CloudDB = string.Empty;
+		
 		public static string sqlkey = ConfigurationSettings.AppSettings["sqlkey"].ToString();
 		public static string Outlet_id = string.Empty;
         public static string Cust_code = string.Empty;

@@ -66,7 +66,9 @@ namespace KOTPrintUtility.App_Code
                     {
                         Program.Outlet_id = dtheader.Rows[0]["outlet_id"].ToString();
                         Program.sqlKeyOnline = dtheader.Rows[0]["sqlkey_erp"].ToString();
-                        Program.CompanyName = dtheader.Rows[0]["Company_Name"].ToString();
+						Program.sqlkey_CloudDB = dtheader.Rows[0]["sqlkey_CloudDB"].ToString();
+
+						Program.CompanyName = dtheader.Rows[0]["Company_Name"].ToString();
                         Program.Outlet_Name = dtheader.Rows[0]["Outlet_Name"].ToString();
 
                         Program.Address = dtheader.Rows[0]["address"].ToString();

@@ -360,7 +360,7 @@ namespace KOTPrintUtility.App_Code
 				for (int i = 0; i < 3; i++)
 				{
 					OrderDetailOnline objOnline = new OrderDetailOnline();
-					Result = CallAPI(new OrdersUpdateRequest { bill_no_local = LastBillNo, bill_no_WebOrder = bill_no_WebOrder, status = status,sql_Key=Program.sqlKeyOnline });
+					Result = CallAPI(new OrdersUpdateRequest { bill_no_local = LastBillNo, bill_no_WebOrder = bill_no_WebOrder, status = status,sql_Key=Program.sqlkey_CloudDB });
 					if (Result && Channel.ToLower() == "website")
 					{
 						OrderStatusUpdateLog.AddStatusList(new clsOrderListStatus { Bill_no = LastBillNo, API_Status = false, CloudDB_Status = true, OnlineBillNo_no = bill_no_WebOrder, Ststus = status }, EnumStatusType.CloudDBStatus);

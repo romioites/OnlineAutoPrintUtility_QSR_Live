@@ -1027,7 +1027,7 @@ namespace KOTPrintUtility.App_Code
 						outlet_id = Program.Outlet_id,
 						Zomato_order_id = Zomato_order_id,
 						Restaurant_id = 0,
-						sql_key=Program.sqlKeyOnline
+						sql_key = Program.sqlkey_CloudDB
 					};
 					var json = JsonConvert.SerializeObject(models);
 					//Loging.Log(LogType.Information, "order request json: " + json);
