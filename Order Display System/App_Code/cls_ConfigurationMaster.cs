@@ -267,9 +267,9 @@ namespace KOTPrintUtility.App_Code
                         }
                         else
                         {
-                            clsConfigSettings.NoofPrint_KOT_TA = clsConfigSettings.is_Print_HD_KOT;
-                            clsConfigSettings.NoofPrint_KOT_HD = clsConfigSettings.is_Print_HD_KOT;
-                            clsConfigSettings.NoofPrint_KOT_DN = clsConfigSettings.is_Print_HD_KOT;
+                            clsConfigSettings.NoofPrint_KOT_TA = "1";
+                            clsConfigSettings.NoofPrint_KOT_HD = "1";
+                            clsConfigSettings.NoofPrint_KOT_DN = "1";
                         }
                         if (dtConfigFile.Columns.Contains("isPrintZomatoIdOnKotHD"))
                             clsConfigSettings.isPrintZomatoIdOnKotHD = dtConfigFile.Rows[0]["isPrintZomatoIdOnKotHD"].ToString().Trim();
