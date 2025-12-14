@@ -110,7 +110,7 @@ namespace KOTPrintUtility.App_Code
 			{
 				Root Objcls = js.Deserialize<Root>(apiRetrun.JsonString);
 				returnValue["status"] = Objcls.Success.ToString();
-				returnValue["error"] = Objcls.ResponsePacket.Message;
+				returnValue["error"] = Objcls.ResponsePacket==null? Objcls.Message.ToString(): Objcls.ResponsePacket.Message;
 				//returnValue = js.Deserialize<Dictionary<string, string>>(apiRetrun.JsonString);
 			}
 			else
