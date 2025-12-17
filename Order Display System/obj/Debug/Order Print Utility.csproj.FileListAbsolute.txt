@@ -240,7 +240,6 @@ D:\Work\GitProjects\OnlineAutoPrintUtility_QSR_Live\Order Display System\bin\Deb
 D:\Work\GitProjects\OnlineAutoPrintUtility_QSR_Live\Order Display System\bin\Debug\stdole.dll
 D:\Work\GitProjects\OnlineAutoPrintUtility_QSR_Live\Order Display System\bin\Debug\ShockwaveFlashObjects.dll
 D:\Work\GitProjects\OnlineAutoPrintUtility_QSR_Live\Order Display System\bin\Debug\Newtonsoft.Json.xml
-D:\Work\GitProjects\OnlineAutoPrintUtility_QSR_Live\Order Display System\obj\Debug\Order Print Utility.csproj.AssemblyReference.cache
 D:\Work\GitProjects\OnlineAutoPrintUtility_QSR_Live\Order Display System\obj\Debug\KOTPrintUtility.UI.Form1.resources
 D:\Work\GitProjects\OnlineAutoPrintUtility_QSR_Live\Order Display System\obj\Debug\KOTPrintUtility.UI.Data_Center.resources
 D:\Work\GitProjects\OnlineAutoPrintUtility_QSR_Live\Order Display System\obj\Debug\KOTPrintUtility.Properties.Resources.resources

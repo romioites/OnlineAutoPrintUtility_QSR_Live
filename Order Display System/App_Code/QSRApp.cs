@@ -338,18 +338,31 @@ namespace KOTPrintUtility.App_Code
 						{
 							is_instant_order = objBill.is_instant_order;
 						}
-						if (objBill.Channel.ToLower() == "website")
+                        if (objBill.Channel.ToLower() == "website")
+                        {
+                          
+                        }
+                        //commented by jatinder for auto settle of website order 
+
+                        //if (objBill.Channel.ToLower() == "website")
+                        //{
+                        //	DataGridView ObjDgvPayment = new DataGridView();
+                        //	clsTempData.SetDataGrid(ObjDgvPayment);
+                        //}
+                        //if (BType.ToUpper() != "C" && objBill.Channel.ToLower() != "website")
+                        //{
+                        //	if (objBill.Card_Type_Settlement.Length > 1)
+                        //	{
+                        //		bool IsAdded = AddPayment_Mode(payment_mode, payment_mode, objBill.Card_Type_Settlement, "", GrandTotal.Replace(",", "").Trim());
+                        //	}
+                        //}
+
+                        if (objBill.Card_Type_Settlement.Length > 1)
 						{
-							DataGridView ObjDgvPayment = new DataGridView();
-							clsTempData.SetDataGrid(ObjDgvPayment);
+							bool IsAdded = AddPayment_Mode(payment_mode, payment_mode, objBill.Card_Type_Settlement, "", GrandTotal.Replace(",", "").Trim());
 						}
-						if (BType.ToUpper() != "C" && objBill.Channel.ToLower() != "website")
-						{
-							if (objBill.Card_Type_Settlement.Length > 1)
-							{
-								bool IsAdded = AddPayment_Mode(payment_mode, payment_mode, objBill.Card_Type_Settlement, "", GrandTotal.Replace(",", "").Trim());
-							}
-						}
+
+
 						try
 						{
 							Loging.Log(LogType.Information, "QSRApp.GenerateBill_HD.start bill generation json " + JsonConvert.SerializeObject(objBill));
@@ -814,18 +827,26 @@ namespace KOTPrintUtility.App_Code
 						{
 							is_instant_order = objBill.is_instant_order;
 						}
-						if (objBill.Channel.ToLower() == "website")
+					//commented by jatinder for auto settle of website order 
+						//if (objBill.Channel.ToLower() == "website")
+						//{
+						//	DataGridView ObjDgvPayment = new DataGridView();
+						//	clsTempData.SetDataGrid(ObjDgvPayment);
+						//}
+						//if (BType.ToUpper() != "C" && objBill.Channel.ToLower() != "website")
+						//{
+						//	if (objBill.Card_Type_Settlement.Length > 1)
+						//	{
+						//		bool IsAdded = AddPayment_Mode(payment_mode, payment_mode, objBill.Card_Type_Settlement, "", GrandTotal.Replace(",", "").Trim());
+						//	}
+						//}
+
+						if (objBill.Card_Type_Settlement.Length > 1)
 						{
-							DataGridView ObjDgvPayment = new DataGridView();
-							clsTempData.SetDataGrid(ObjDgvPayment);
+							bool IsAdded = AddPayment_Mode(payment_mode, payment_mode, objBill.Card_Type_Settlement, "", GrandTotal.Replace(",", "").Trim());
 						}
-						if (BType.ToUpper() != "C" && objBill.Channel.ToLower() != "website")
-						{
-							if (objBill.Card_Type_Settlement.Length > 1)
-							{
-								bool IsAdded = AddPayment_Mode(payment_mode, payment_mode, objBill.Card_Type_Settlement, "", GrandTotal.Replace(",", "").Trim());
-							}
-						}
+
+
 						try
 						{
 							Loging.Log(LogType.Information, "QSRApp.GenerateBill_HD.start bill generation json " + JsonConvert.SerializeObject(objBill));
