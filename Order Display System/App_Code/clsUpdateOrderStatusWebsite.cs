@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 
@@ -159,6 +160,7 @@ namespace KOTPrintUtility.App_Code
 														//sql += "exec Usp_PendingOrderList_CURD @bill_date='"+Program.DayEnd_BIllingDate+ "',@mode='5',@bill_no='"+bill_no+"';";
 													}
 													clsUpdateOrder.UpdateWebsiteStatusGuestData(cust, bill_no, online_bill_no, EnumOrderStatus.Cancel, true);
+													Thread.Sleep(1000);
 												}
 											}
 										}
