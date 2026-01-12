@@ -119,6 +119,7 @@
     <Compile Include="App_Code\clsApplicationVariables.cs" />
     <Compile Include="App_Code\clsBLL.cs" />
     <Compile Include="App_Code\clsCalculateBill.cs" />
+    <Compile Include="App_Code\clsCancelBill.cs" />
     <Compile Include="App_Code\clsConfigSettings.cs" />
     <Compile Include="App_Code\clsConnnectionManager.cs" />
     <Compile Include="App_Code\clsDeal.cs" />
@@ -198,6 +199,7 @@
     <Compile Include="App_Code\ServiceLiveSale.cs" />
     <Compile Include="App_Code\SqlSupport.cs" />
     <Compile Include="App_Code\SweetsApp.cs" />
+    <Compile Include="App_Code\Synchronize_Sql_CloudDB_Connection.cs" />
     <Compile Include="App_Dataset\BoltKOT.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

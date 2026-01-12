@@ -16,6 +16,7 @@ namespace KOTPrintUtility.App_Code
 		public bool status { set; get; }
 		public string message { set; get; }
 		public List<clsOrdersBill> bill { get; set; }
+		public List<clsCancelBills> Cancelbills { get; set; }
 	}
 	public class clsOrdersBill
 	{
@@ -50,6 +51,8 @@ namespace KOTPrintUtility.App_Code
 		public List<clsOrdersItem> items { get; set; }
 		public List<clsComboItem> combos { get; set; }
 		public List<clsOrdersCharges> charges { get; set; }
+	
+		
 	}
 
 
@@ -147,5 +150,13 @@ namespace KOTPrintUtility.App_Code
 		public string Charge_name { get; set; }
 		public decimal chargesValue { get; set; }
 		public decimal chargesTotaltax { get; set; }
+	}
+
+	public class clsCancelBills
+	{
+		public int bill_no_local { get; set; }
+		public string zomato_order_id { get; set; }
+		public int Online_bill_no { get; set; }
+
 	}
 }

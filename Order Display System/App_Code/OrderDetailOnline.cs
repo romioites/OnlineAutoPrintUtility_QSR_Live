@@ -1020,7 +1020,8 @@ namespace KOTPrintUtility.App_Code
 					string zomato_order_idss = GetAllPunchedZomatoIds();
 					string apiUrl = clsUpdateOrder.GetConfigUrl("GetCloudorder").url;
 					List<string> Zomato_order_id = new List<string> { zomato_order_idss };
-					// example: "https://urbanswiggyzomatoapi.azurewebsites.net/api/cloud/GetOrderinPOSAndUtility"					
+					// example: "https://urbanswiggyzomatoapi.azurewebsites.net/api/cloud/GetOrderinPOSAndUtility"	
+
 					var models = new OrderRequestModel
 					{
 						bill_date = Program.DayEnd_BIllingDate,
