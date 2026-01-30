@@ -12,12 +12,12 @@ namespace KOTPrintUtility.App_Code
 {
 	class clsUpdateOrderStatusWebsite
 	{
-		private Timer tmrStarttmr;		
+		private System.Timers.Timer tmrStarttmr;		
 
 		public async Task StatrtUploadStatus()
 		{
 			// Initialize the timer
-			tmrStarttmr = new Timer(30000); // 15 sec
+			tmrStarttmr = new System.Timers.Timer(30000); // 15 sec
 			tmrStarttmr.Elapsed += async (s, e) =>
 			{
 				try

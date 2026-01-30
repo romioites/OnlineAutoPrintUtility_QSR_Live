@@ -683,14 +683,15 @@ namespace KOTPrintUtility.App_Code
                         string Online_bill_no = dr.Online_bill_no.ToString();
                         DataTable dtItemDetail = null;
                         ADOC objadoc = new ADOC();
-                        dtItemDetail = objadoc.GetTable("Usp_CheckValidBill @bill_no_fk='" + bill_no_local.Trim() + "',@zomato_order_id='" + zomato_order_id.Trim() + "',@Online_bill_no='" + Online_bill_no.Trim() + "';");
+                        dtItemDetail = objadoc.GetTable("Usp_CheckValidBill_utility @bill_no_fk='" + bill_no_local.Trim() + "',@zomato_order_id='" + zomato_order_id.Trim() + "',@Online_bill_no='" + Online_bill_no.Trim() + "';");
                        
                         if (dtItemDetail != null && dtItemDetail.Rows.Count > 0)
                         {
                             // double GrandTotal = Convert.ToDouble(objadoc.GetSingleResult("select bill_amount from tbl_bill with (nolock) where bill_no='" + bill_no_local.Trim() + "'"));
                             string Pmt_mode = dtItemDetail.Rows[0]["Payment_Mode"].ToString();
-                            double GrandTotal = Convert.ToDouble(dtItemDetail.Rows[0]["bill_amount"].ToString());
-                          
+                            double GrandTotal = Convert.ToDouble(dtItemDetail.Rows[0]["bill_amount"].ToString());                            
+                            string Cancellation_Reason = dtItemDetail.Rows[0]["Cancellation_Reason"].ToString();
+
                             string BillVoidDescription = "Cancelled From Online";
                             string Channel = string.Empty;
                             Channel = dtItemDetail.Rows[0]["Channel"].ToString();
@@ -713,9 +714,15 @@ namespace KOTPrintUtility.App_Code
 
                                 //changed by jatinder on 15-12-2025 to sync to clouddb connection
                                 Synchronize_Sql_CloudDB_Connection.GetObject.ExecuteDML(Online_sql);
-                                Loging.Log(LogType.Information, "QSRApp.PrintCancelBill. Start bill printing  bill no=> " + bill_no_local);
-                                PrintCancelBill(GrandTotal, bill_no_local);
-                                Loging.Log(LogType.Information, "QSRApp.PrintCancelBill. End bill printing  bill no=> " + bill_no_local);
+                                if(Cancellation_Reason.Length > 2)
+                                {
+                                }
+                                else
+                                {
+                                    Loging.Log(LogType.Information, "QSRApp.PrintCancelBill. Start bill printing  bill no=> " + bill_no_local);
+                                    PrintCancelBill(GrandTotal, bill_no_local);
+                                    Loging.Log(LogType.Information, "QSRApp.PrintCancelBill. End bill printing  bill no=> " + bill_no_local);
+                                }                             
                             }
 
                         }
