@@ -12,12 +12,13 @@ namespace KOTPrintUtility.App_Code
 {
 	class clsUpdateOrderStatusWebsite
 	{
+		private static bool IsProcessIsonProgress = false;
 		private System.Timers.Timer tmrStarttmr;		
 
 		public async Task StatrtUploadStatus()
 		{
 			// Initialize the timer
-			tmrStarttmr = new System.Timers.Timer(30000); // 15 sec
+			tmrStarttmr = new System.Timers.Timer(60000); // 15 sec
 			tmrStarttmr.Elapsed += async (s, e) =>
 			{
 				try
@@ -41,8 +42,13 @@ namespace KOTPrintUtility.App_Code
 
 		private static async Task UpdateStatusAPI()
 		{
+			if (IsProcessIsonProgress)
+			{
+				return;
+			}
 			try
 			{
+				IsProcessIsonProgress = true;
 				SqlCommand cmd = new SqlCommand();
 				DataSet ds = new DataSet();
 				try
@@ -160,7 +166,7 @@ namespace KOTPrintUtility.App_Code
 														//sql += "exec Usp_PendingOrderList_CURD @bill_date='"+Program.DayEnd_BIllingDate+ "',@mode='5',@bill_no='"+bill_no+"';";
 													}
 													clsUpdateOrder.UpdateWebsiteStatusGuestData(cust, bill_no, online_bill_no, EnumOrderStatus.Cancel, true);
-													Thread.Sleep(1000);
+													//Thread.Sleep(10000);
 												}
 											}
 										}
@@ -185,7 +191,12 @@ namespace KOTPrintUtility.App_Code
 			{
 				Loging.Log(LogType.Error, "GetOrderStatusLog error 2" + ex.Message);
 			}
+			finally
+			{
+				IsProcessIsonProgress = false;
+			}
 		}
+
 		private static async Task UpdateStatus()
 		{
 			try

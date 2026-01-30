@@ -45,7 +45,7 @@ namespace KOTPrintUtility.App_Code
 						apiRetrun.Status = true;
 						apiRetrun.authentication = true;
 						apiRetrun.JsonString = ResponceResult;
-						Loging.Log(LogType.Information, "cls_ZomatoAPi.PostRequest.response: " + jsonData);
+						Loging.Log(LogType.Information, "cls_ZomatoAPi.PostRequest.response: " + ResponceResult);
 					}
 				}
 				return apiRetrun;
