@@ -682,7 +682,7 @@ namespace KOTPrintUtility.App_Code
                         string zomato_order_id = dr.zomato_order_id.ToString();
                         string Online_bill_no = dr.Online_bill_no.ToString();
                         DataTable dtItemDetail = null;
-                        ADOC objadoc = new ADOC();
+                        var objadoc = new ADOC();
                         dtItemDetail = objadoc.GetTable("Usp_CheckValidBill_utility @bill_no_fk='" + bill_no_local.Trim() + "',@zomato_order_id='" + zomato_order_id.Trim() + "',@Online_bill_no='" + Online_bill_no.Trim() + "';");
                        
                         if (dtItemDetail != null && dtItemDetail.Rows.Count > 0)
@@ -701,9 +701,9 @@ namespace KOTPrintUtility.App_Code
                             //    Web_order_no = dtItemDetail.Rows[0]["Web_order_no"].ToString();
 
                             string sqlCardquery = string.Empty;
-                            DataGridView dgvDetail = new DataGridView();
+                            var dgvDetail = new DataGridView();
 
-                            clsCancelBill objCancel = new clsCancelBill();
+                            var objCancel = new clsCancelBill();
                             string Made_Unmade = "";
                             bool IsBillCanceled = objCancel.CancelBill_Made_Unmade(bill_no_local.Trim(), BillVoidDescription, Program.CashierName, Program.DayEnd_BIllingDate, dgvDetail, Made_Unmade, Pmt_mode, sqlCardquery, Channel, Online_bill_no, zomato_order_id);
                           

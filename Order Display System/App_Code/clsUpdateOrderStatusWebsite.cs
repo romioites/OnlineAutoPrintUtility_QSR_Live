@@ -17,8 +17,9 @@ namespace KOTPrintUtility.App_Code
 
 		public async Task StatrtUploadStatus()
 		{
+			IsProcessIsonProgress = false;
 			// Initialize the timer
-			tmrStarttmr = new System.Timers.Timer(60000); // 15 sec
+			tmrStarttmr = new System.Timers.Timer(90000); // 15 sec
 			tmrStarttmr.Elapsed += async (s, e) =>
 			{
 				try
