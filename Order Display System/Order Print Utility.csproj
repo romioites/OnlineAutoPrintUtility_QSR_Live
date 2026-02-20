@@ -187,6 +187,7 @@
     <Compile Include="App_Code\GetZomatoReferenceClass.cs" />
     <Compile Include="App_Code\GuestMastcs.cs" />
     <Compile Include="App_Code\IOnineOrderAutoAccept.cs" />
+    <Compile Include="App_Code\LiveSaleMismatch.cs" />
     <Compile Include="App_Code\LiveSaleUpdate.cs" />
     <Compile Include="App_Code\Loging.cs" />
     <Compile Include="App_Code\LPrinter.cs" />

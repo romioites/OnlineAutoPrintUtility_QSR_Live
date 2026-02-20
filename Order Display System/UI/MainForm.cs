@@ -83,7 +83,6 @@ namespace KOTPrintUtility.UI
                 this.Text = "Online Order Print Utility VS-" + Program.InstalledVersion;
                 #endregion
 
-
                 picUpdateAvailble.Visible = false;
             }
             catch (Exception ex)
@@ -103,6 +102,8 @@ namespace KOTPrintUtility.UI
             {
                 TimerIsStopedForLastSixtySecod = 0;
                 TmrKOTPrint.Stop();
+                //if (true == false)
+                //{
                 if (objclsBill.CheckForInternet() == true)
                 {
                     if (btnStatus.BackColor == Color.Red)
@@ -111,13 +112,14 @@ namespace KOTPrintUtility.UI
                     if (!objclsBill._TransactionIsonProgress)
                     {
                         objclsBill.SetLableText("Processing...", lblNoofOrder);
-						await Task.Run(() => objclsBill.GetOrderAPI(lblNoofOrder));
-					}
+                        await Task.Run(() => objclsBill.GetOrderAPI(lblNoofOrder));
+                    }
                 }
                 else
                 {
                     btnStatus.BackColor = Color.Red;
                 }
+                //}
             }
             catch (Exception ex)
             {
@@ -144,11 +146,14 @@ namespace KOTPrintUtility.UI
                     objclsBill._TransactionIsonProgress = false;
                     clsUpdateOrderStatusWebsite objclsStatus = new clsUpdateOrderStatusWebsite();
                     LiveSaleUpdate objSale = new LiveSaleUpdate();
+                    LiveSaleMismatch objSaleMismatch = new LiveSaleMismatch();
                     lblTimer.Text = Program.DayEnd_BIllingDate + " " + DateTime.Now.ToString("hh:mm:ss tt");
                     Task.Run(() => objclsStatus.StatrtUploadStatus());
-					Task.Run(() => objSale.StatrtUploadSale());
+                    Task.Run(() => objSale.StatrtUploadSale());
+                    Task.Run(() => objSaleMismatch.StartSaleMismatch());
 
-					Loging.Log(LogType.Information, "Application Started");
+
+                    Loging.Log(LogType.Information, "Application Started");
                     picUpdateAvailble.Visible = false;
                     if (Program.InstalledVersion != Program.AvailableVersion && Program.AvailableVersion != "")
                     {
